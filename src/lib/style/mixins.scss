@@ -1,0 +1,24 @@
+@mixin top-border($color) {
+  border-top: 4px solid $color;
+}
+
+@mixin font-settings($weight, $size, $color) {
+  font-family: var(--font-family);
+  font-weight: $weight;
+  font-size: $size;
+  letter-spacing: 0.01em;
+  color: $color;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin media-query($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}

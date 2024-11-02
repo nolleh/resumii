@@ -1,10 +1,11 @@
 <script lang="ts">
 	export let href: string;
 	export let label: string;
+  export let click;
 </script>
 
 <div class="cta-container">
-	<a {href} class="cta"><span>{label}</span></a>
+	<a {href} class="cta" on:click={click}><span>{label}</span></a>
 </div>
 
 <style lang="scss">

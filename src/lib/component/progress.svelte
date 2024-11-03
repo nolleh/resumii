@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	$: currentPage = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
 	const activeClass = (page: String) => (currentPage === page ? 'active' : '');
 </script>
@@ -7,25 +8,29 @@
 <div class="progressBar-container col-centered">
 	<ul class="progressbar">
 		<!-- <li class="completed"> -->
-		<li class={activeClass('intro')}>
+		<button class={activeClass('intro')} on:click={(_) => goto('/start/intro')}>
 			<div class="progress-text">Intro</div>
-		</li>
-		<li class={activeClass('summary')}>
+		</button>
+		<button class={activeClass('summary')} on:click={(_) => goto('/start/summary')}>
 			<div class="progress-text">Summary</div>
-		</li>
-		<li class={activeClass('work')}>
+		</button>
+		<button class={activeClass('work')}>
 			<div class="progress-text">work history</div>
-		</li>
-		<li class={activeClass('skill')}>
+		</button>
+		<button class={activeClass('skill')}>
 			<div class="progress-text">Skill</div>
-		</li>
-		<li class={activeClass('lang')}>
+		</button>
+		<button class={activeClass('lang')}>
 			<div class="progress-text">Lang</div>
-		</li>
+		</button>
 
-		<li class={activeClass('edu')}>
+		<button class={activeClass('edu')}>
 			<div class="progress-text">Education</div>
-		</li>
+		</button>
+
+		<button class={activeClass('view')} on:click={(_) => goto('/build')}>
+			<div class="progress-text">Result</div>
+		</button>
 	</ul>
 </div>
 
@@ -37,17 +42,24 @@
 	.progressBar-container {
 		width: 70%;
 		/* background: red; */
+		margin: auto;
 	}
 
 	.progressbar {
 		counter-reset: step;
+		display: flex;
+		justify-content: space-between;
 	}
 
-	.progressbar li {
+	.progressbar li,
+	button {
 		list-style-type: none;
-		width: 25%;
+		/* width: 25%; */
+		flex: 1;
 		position: relative;
-		float: left;
+		/* float: left; */
+		border: none;
+		background: none;
 	}
 
 	.progressbar li div.progress-text {
@@ -56,7 +68,8 @@
 		text-align: center;
 	}
 
-	.progressbar li:before {
+	.progressbar li:before,
+	button:before {
 		content: counter(step);
 		counter-increment: step;
 		color: black;
@@ -72,7 +85,13 @@
 		margin: 0 auto;
 	}
 
-	.progressbar li.active:before {
+	.progressbar li:hover::before,
+	button:hover::before {
+		background-color: #a3dffb;
+	}
+
+	.progressbar li.active:before,
+	button.active:before {
 		color: white;
 		background: #0869bd;
 		border: $circleBorderWidth solid #ffffff;
@@ -84,7 +103,8 @@
 		font-size: 12px;
 	}
 
-	.progressbar li.completed:before {
+	.progressbar li.completed:before,
+	button.completed:before {
 		content: '';
 		background: url('/assets/icons/check.svg') 0 3px no-repeat;
 		background-repeat: no-repeat;
@@ -94,7 +114,8 @@
 		border: 1px solid white;
 	}
 
-	.progressbar li:after {
+	.progressbar li:after,
+	button:after {
 		content: '';
 		position: absolute;
 		width: calc(100% - #{($circleSize + $circleBorderWidth * 2 + $lineOffset * 2)});
@@ -105,7 +126,8 @@
 		z-index: -1;
 	}
 
-	.progressbar li:first-child:after {
+	.progressbar li:first-child:after,
+	button:first-child:after {
 		content: none;
 	}
 </style>

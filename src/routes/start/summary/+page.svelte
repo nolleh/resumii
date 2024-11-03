@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import Cta from '$lib/component/cta.svelte';
-  import { intro, summary } from '$lib/store';
+  import { user, intro, summary } from '$lib/store';
   console.log($intro);
 
 	let textareaContent = 'Some text...';
@@ -10,6 +10,7 @@
   };
 
 </script>
+{$intro}
 
 <Cta href='./start/work-history' label='Next' {click} />
 

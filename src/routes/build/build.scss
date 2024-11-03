@@ -1,0 +1,61 @@
+.content {
+  display: flex;
+  overflow-y: auto;
+}
+
+.left {
+  width: 25%;
+  background: #135;
+  overflow-y: auto;
+  align-self: stretch;
+}
+
+@media print {
+  .left {
+    width: 50%;
+    background: #135;
+    overflow-y: auto;
+    align-self: stretch;
+  }
+}
+
+.right {
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+}
+
+.skill-item {
+  display: flex;
+  padding: 5px;
+}
+
+.score {
+  flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  padding-right: 2rem;
+  align-items: flex-end;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.company-mark {
+  position: absolute;
+  left: 20px;
+  color: #ddd;
+}
+
+.fluent {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #147;
+}
+

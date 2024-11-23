@@ -2,9 +2,9 @@ import { writable, type Writable } from 'svelte/store';
 
 export class User {
   name: string = '';
+  email: string = '';
   headComment: string = '';
   city: string = '';
-  email: string = '';
 
   constructor(user: Partial<User>) {
     Object.assign(this, user);

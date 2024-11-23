@@ -1,16 +1,23 @@
+<script lang="ts">
+	export let defaultData: Record<string, any>;
+</script>
+
 <div>
 	<h1>example</h1>
-	<p>
-		This text is styled with some of the text formatting properties. The heading uses the
-		text-align, text-transform, and color properties. The paragraph is indented, aligned, and the
-		space between characters is specified. The underline is removed from this colored
-		<a target="_blank" href="tryit.asp?filename=trycss_text">"Try it Yourself"</a> link.
-	</p>
+
+	{#if defaultData}
+		{#each Object.keys(defaultData) as key}
+			<p>
+				{key}
+				{defaultData[key]}
+			</p>
+		{/each}
+	{/if}
 </div>
 
 <style lang="scss">
 	div {
-    margin: 60px;
+		margin: 60px;
 		border: 1px solid gray;
 		padding: 8px;
 	}

@@ -1,23 +1,19 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import Example from '$lib/component/example.svelte';
-	import { user, User, intro } from '$lib/store';
+	import { user, User, summary } from '$lib/store';
 
 	let textareaContent = 'Some text...';
 
 	function saveContent(event: Event) {
-		intro.set(textareaContent);
+		summary.set(textareaContent);
 		return true;
 	}
 </script>
 
-<h2>Intro</h2>
+<h2>Summary</h2>
 
-<p>
-	<strong>Tip:</strong> Use the resize property to prevent textareas from being resized (disable the
-	"grabber" in the bottom right corner):
-</p>
-<p>put your introduction that will be shown first.</p>
+<p>describe yourself, introduction that will be shown first.</p>
 <form>
 	<textarea bind:value={textareaContent}></textarea>
 	<Cta href="/start/work-history" label="Next" click={saveContent} />

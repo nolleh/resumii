@@ -8,14 +8,13 @@
 		email: string,
 		city: string = '';
 
-	user.set(
-		new User({
-			name: 'kyeongmi kim',
-			headComment: 'GameServer / Backend Programmer',
-			city: 'Seongnam-si',
-			email: 'nolleh7707@gmail.com'
-		})
-	);
+	const defaultUser: User = new User({
+		name: 'kyeongmi kim',
+		headComment: 'GameServer / Backend Programmer',
+		city: 'Seongnam-si',
+		email: 'nolleh7707@gmail.com'
+	});
+	user.set(defaultUser);
 
 	function saveContent(event: Event) {
 		user.set(
@@ -26,7 +25,7 @@
 				email: email
 			})
 		);
-    console.log("saved", $user)
+		console.log('saved', $user);
 		return true;
 	}
 </script>
@@ -46,12 +45,12 @@
 	</fieldset>
 </form>
 
-<Example />
+<Example defaultData = {defaultUser} />
 
 <style>
 	#basic {
 		width: 500px;
-    margin-left: 10px;
+		margin-left: 10px;
 	}
 
 	#basic p {
@@ -65,7 +64,7 @@
 		display: inline-block; /* to allow width setting */
 		margin-left: auto;
 		margin-right: auto;
-    text-align: right;
+		text-align: right;
 		font-weight: bold;
 	}
 

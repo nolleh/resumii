@@ -1,42 +1,33 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import Example from '$lib/component/example.svelte';
-	import { user, User, intro } from '$lib/store';
+	import { user, User, defaultUser } from '$lib/store';
 
 	let name: string,
 		comment: string,
 		email: string,
 		city: string = '';
 
-	const defaultUser: User = new User({
-		name: '<b> kyeongmi kim </b>',
-		headComment: 'GameServer / Backend Programmer',
-		city: 'Seongnam-si',
-		email: 'nolleh7707@gmail.com'
-	});
-	user.set(defaultUser);
-
 	function saveContent(event: Event) {
 		user.set(
 			new User({
 				name: name,
-				headComment: comment,
+				professionalTitle: comment,
 				city: city,
 				email: email
 			})
 		);
-		console.log('saved', $user);
 		return true;
 	}
 </script>
 
 <h2>Intro</h2>
-
 <p>put your basic information</p>
+
 <form id="basic">
 	<fieldset>
 		<label>name: <input bind:value={name} /></label>
-		<label>comment: <input bind:value={comment} /></label>
+		<label>professional title: <input bind:value={comment} /></label>
 		<label>email: <input bind:value={email} /></label>
 		<label>city: <input bind:value={city} /></label>
 		<p>
@@ -48,10 +39,14 @@
 <Example defaultData={defaultUser} />
 
 <style>
+	/* #basic { */
+	/* 	display: flex; */
+	/* 	justify-content: center; */
+	/* } */
+
 	#basic fieldset {
-		width: 500px;
-		margin-left: 10px;
-		margin-right: 10px;
+		width: 560px;
+		/* margin: 0 auto; */
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
@@ -62,9 +57,10 @@
 
 	label {
 		margin-top: 20px;
-		width: 400px;
+		width: 500px;
 		color: #008cba;
-		display: inline-block; /* to allow width setting */
+    /* to allow width setting */
+		display: inline-block; 
 		margin-left: auto;
 		margin-right: auto;
 		text-align: right;

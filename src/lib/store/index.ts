@@ -1,21 +1,18 @@
 import { writable, type Writable } from 'svelte/store';
+import { User, defaultUser } from './user';
+import { defaultSummary } from './summary';
+import { defaultWorkHistory, WorkHistory } from './work-history';
+import { Level } from './level';
 
-export class User {
-  name: string = '';
-  email: string = '';
-  headComment: string = '';
-  city: string = '';
+export * from './user';
+export * from './summary';
+export * from './work-history';
 
-  constructor(user: Partial<User>) {
-    Object.assign(this, user);
-  }
-}
-
-export const user: Writable<User> = writable();
-
-export const intro = writable('');
-export const summary = writable('');
-// export const workHistory = writable('');
+export const user: Writable<User> = writable(defaultUser);
+export const summary = writable(defaultSummary);
+export const workHistory: Writable<WorkHistory[]> = writable(defaultWorkHistory);
+export const skill: Writable<Level[]> = writable([]);
+export const language: Writable<Level[]> = writable([]);
 export const education = writable('');
 export const certification = writable('');
 export const accomplishment = writable('');

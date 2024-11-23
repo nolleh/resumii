@@ -1,20 +1,23 @@
 <script lang="ts">
-	export let defaultData: Record<string, any>;
+	export let defaultData: Record<string, any> | string;
 </script>
 
 <div>
-
 	<h1>example</h1>
-  <p> you can also put html tag to emphasize text </p>
+	<p>You can also put html tag to emphasize text. John Doe's example</p>
 
-  <hr class="rounded">
+	<hr class="rounded" />
 	{#if defaultData}
-		{#each Object.keys(defaultData) as key}
-			<p>
-				{key}
-				{@html defaultData[key]}
-			</p>
-		{/each}
+		{#if 'string' === typeof defaultData}
+			{@html defaultData}
+		{:else}
+			{#each Object.keys(defaultData) as key}
+				<p>
+					{key}:
+					{@html defaultData[key]}
+				</p>
+			{/each}
+		{/if}
 	{/if}
 </div>
 
@@ -36,5 +39,4 @@
 		text-align: justify;
 		letter-spacing: 3px;
 	}
-
 </style>

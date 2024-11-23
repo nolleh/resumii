@@ -1,8 +1,22 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	$: currentPage = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
-	const activeClass = (page: String) => (currentPage === page ? 'active' : '');
+	
+  $: currentPage = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
+	
+  const steps = ['intro', 'summary', 'work', 'skill', 'lang', 'edu', 'view'];
+
+	const activeClass = (page: string) => {
+		const currentIndex = steps.indexOf(currentPage);
+		const pageIndex = steps.indexOf(page);
+		if (pageIndex < currentIndex) {
+			return 'completed';
+		} else if (pageIndex === currentIndex) {
+			return 'active';
+		}
+		return '';
+	};
+
 </script>
 
 <div class="progressBar-container col-centered">
@@ -14,10 +28,10 @@
 		<button class={activeClass('summary')} on:click={(_) => goto('/start/summary')}>
 			<div class="progress-text">Summary</div>
 		</button>
-		<button class={activeClass('work')}>
-			<div class="progress-text">work history</div>
+		<button class={activeClass('work')} on:click={(_) => goto('/start/work')}>
+			<div class="progress-text">Work</div>
 		</button>
-		<button class={activeClass('skill')}>
+		<button class={activeClass('skill')} on:click= {(_) => goto('/start/skill')}>
 			<div class="progress-text">Skill</div>
 		</button>
 		<button class={activeClass('lang')}>
@@ -98,11 +112,12 @@
 	}
 
 	.progressbar button.completed:before {
-		content: '';
+		content: counter(step);
 		background: url('/assets/icons/check.svg') 0 3px no-repeat;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-color: #ebeae8;
+		color: white;
 
 		border: 1px solid white;
 	}

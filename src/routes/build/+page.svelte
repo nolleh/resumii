@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { user, intro, summary, education, certification, accomplishment } from '$lib/store';
+	import { user, summary, workHistory, skill, language, education, certification, accomplishment } from '$lib/store';
 	import StepSection from '$lib/component/step-section.svelte';
 </script>
 
@@ -8,18 +8,17 @@
 	<div class="left"></div>
 	<div class="right">
 		<h1>{@html $user.name}</h1>
-		<h2>{@html $user.headComment}</h2>
+		<h2>{@html $user.professionalTitle}</h2>
 		<div id="to">
 			<!-- <img src="place"/>  -->
 			{@html $user.city} <br />
 			<!-- <img src="mail"/>  -->
 			{@html $user.email}
 		</div>
-		<StepSection title="Introduction" content={$intro}></StepSection>
-		<StepSection title="Summary" content={$summary}></StepSection>
-		<!-- <StepSection content={$workHistory}></StepSection> -->
-		<!-- <StepSection content={$skill}></StepSection> -->
-		<!-- <StepSection id="language"></StepSection> -->
+		<StepSection content={$summary}></StepSection>
+		<StepSection title="Work History" content={$workHistory}></StepSection>
+		<!-- <StepSection title="Skill" content={$skill}></StepSection> -->
+		<!-- <StepSection id="Language" content={$language}></StepSection> -->
 		<StepSection title="Education" content={$education}></StepSection>
 		<StepSection title="Certification" content={$certification}></StepSection>
 		<StepSection title="Accomplishment" content={$accomplishment}></StepSection>

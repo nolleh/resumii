@@ -1,16 +1,18 @@
 <script lang="ts">
-  export let title: string;
-  export let content: string;
+	export let title: string | null = null;
+	export let content: string;
 </script>
+
 <link rel="stylesheet" href="src/routes/build/build.scss" />
 <section>
-  <h2> {title} </h2>
-  {content}
+	{#if title}
+		<h3>{title}</h3>
+	{/if}
+	{@html content}
 </section>
 
-<style lang='scss'>
-  section {
-    /* margin-top: 10px; */
-  }
+<style lang="scss">
+	section {
+		margin-top: 13px;
+	}
 </style>
-

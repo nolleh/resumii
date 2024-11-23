@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import Example from '$lib/component/example.svelte';
-	import { user, User, summary } from '$lib/store';
+	import { summary, defaultSummary } from '$lib/store';
 
 	let textareaContent = 'Some text...';
 
@@ -16,10 +16,10 @@
 <p>describe yourself, introduction that will be shown first.</p>
 <form>
 	<textarea bind:value={textareaContent}></textarea>
-	<Cta href="/start/work-history" label="Next" click={saveContent} />
+	<Cta href="/start/work" label="Next" click={saveContent} />
 </form>
 
-<Example />
+<Example defaultData={defaultSummary}/>
 
 <style>
 	textarea {

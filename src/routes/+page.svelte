@@ -38,7 +38,7 @@
 	</div>
 </section>
 
-<Cta href='/start/intro' label='Start'/>
+<Cta href='/start/intro' label='Start' click=()/>
 
 <style lang="scss">
 	@use '$lib/style/variables' as *;

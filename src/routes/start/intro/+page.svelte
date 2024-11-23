@@ -3,7 +3,10 @@
 	import Example from '$lib/component/example.svelte';
 	import { user, User, intro } from '$lib/store';
 
-	let textareaContent = 'Some text...';
+	let name: string,
+		comment: string,
+		email: string,
+		city: string = '';
 
 	user.set(
 		new User({
@@ -15,35 +18,63 @@
 	);
 
 	function saveContent(event: Event) {
-		intro.set(textareaContent);
+		user.set(
+			new User({
+				name: name,
+				headComment: comment,
+				city: city,
+				email: email
+			})
+		);
 		return true;
 	}
 </script>
 
 <h2>Intro</h2>
 
-<p>
-	<strong>Tip:</strong> Use the resize property to prevent textareas from being resized (disable the
-	"grabber" in the bottom right corner):
-</p>
-<p>put your introduction that will be shown first.</p>
-<form>
-	<textarea bind:value={textareaContent}></textarea>
-	<Cta href="/start/summary" label="Next" click={saveContent} />
+<p>put your basic information</p>
+<form id="basic">
+	<fieldset>
+		<label>name: <input bind:value={name} /></label>
+		<label>email: <input bind:value={email} /></label>
+		<label>comment: <input bind:value={comment} /></label>
+		<label>city: <input bind:value={city} /></label>
+		<p>
+			<Cta href="/start/summary" label="Next" click={saveContent} />
+		</p>
+	</fieldset>
 </form>
 
 <Example />
 
 <style>
-	textarea {
-		width: 100%;
-		height: 150px;
-		padding: 12px 20px;
+	#basic {
+		width: 500px;
+    margin-left: 10px;
+	}
+
+	#basic p {
+		margin-top: 20px;
+	}
+
+	label {
+		margin-top: 20px;
+		width: 400px;
+		color: #008cba;
+		display: inline-block; /* to allow width setting */
+		margin-left: auto;
+		margin-right: auto;
+    text-align: right;
+		font-weight: bold;
+	}
+
+	input {
+		width: 300px;
+		padding: 8px 10px;
 		box-sizing: border-box;
 		border: 2px solid #ccc;
 		border-radius: 4px;
 		background-color: #f8f8f8;
-		font-size: 16px;
 		resize: none;
 	}
 </style>

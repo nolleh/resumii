@@ -9,7 +9,7 @@
 		city: string = '';
 
 	const defaultUser: User = new User({
-		name: 'kyeongmi kim',
+		name: '<b> kyeongmi kim </b>',
 		headComment: 'GameServer / Backend Programmer',
 		city: 'Seongnam-si',
 		email: 'nolleh7707@gmail.com'
@@ -36,8 +36,8 @@
 <form id="basic">
 	<fieldset>
 		<label>name: <input bind:value={name} /></label>
-		<label>email: <input bind:value={email} /></label>
 		<label>comment: <input bind:value={comment} /></label>
+		<label>email: <input bind:value={email} /></label>
 		<label>city: <input bind:value={city} /></label>
 		<p>
 			<Cta href="/start/summary" label="Next" click={saveContent} />
@@ -45,12 +45,15 @@
 	</fieldset>
 </form>
 
-<Example defaultData = {defaultUser} />
+<Example defaultData={defaultUser} />
 
 <style>
-	#basic {
+	#basic fieldset {
 		width: 500px;
 		margin-left: 10px;
+		margin-right: 10px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
 	}
 
 	#basic p {

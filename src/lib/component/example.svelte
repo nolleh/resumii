@@ -3,13 +3,16 @@
 </script>
 
 <div>
-	<h1>example</h1>
 
+	<h1>example</h1>
+  <p> you can also put html tag to emphasize text </p>
+
+  <hr class="rounded">
 	{#if defaultData}
 		{#each Object.keys(defaultData) as key}
 			<p>
 				{key}
-				{defaultData[key]}
+				{@html defaultData[key]}
 			</p>
 		{/each}
 	{/if}
@@ -34,8 +37,4 @@
 		letter-spacing: 3px;
 	}
 
-	a {
-		text-decoration: none;
-		color: #008cba;
-	}
 </style>

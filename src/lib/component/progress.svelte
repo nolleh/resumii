@@ -40,16 +40,19 @@
 	$lineOffset: 10px;
 
 	.progressBar-container {
-		width: 70%;
-		/* background: red; */
+		width: 100%;
+		max-width: 70%;
 		margin: auto;
-		display: block;
+		display: flex;
+		justify-content: center;
 	}
 
 	.progressbar {
 		counter-reset: step;
 		display: flex;
 		justify-content: space-between;
+		width: 100%;
+		padding: 0;
 	}
 
 	.progressbar button {

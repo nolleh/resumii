@@ -7,13 +7,13 @@
 <div class="content">
 	<div class="left"></div>
 	<div class="right">
-		<h1>{$user.name}</h1>
-		<h2>{$user.headComment}</h2>
+		<h1>{@html $user.name}</h1>
+		<h2>{@html $user.headComment}</h2>
 		<div id="to">
 			<!-- <img src="place"/>  -->
-			{$user.city} <br />
+			{@html $user.city} <br />
 			<!-- <img src="mail"/>  -->
-			{$user.email}
+			{@html $user.email}
 		</div>
 		<StepSection title="Introduction" content={$intro}></StepSection>
 		<StepSection title="Summary" content={$summary}></StepSection>

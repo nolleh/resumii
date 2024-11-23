@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { user, summary, workHistory, skill, language, education, certification, accomplishment } from '$lib/store';
 	import StepSection from '$lib/component/step-section.svelte';
+  import StepWorkSection from '$lib/component/step-work-section.svelte';
 </script>
 
 <link rel="stylesheet" href="src/routes/build/build.scss" />
@@ -16,7 +17,7 @@
 			{@html $user.email}
 		</div>
 		<StepSection content={$summary}></StepSection>
-		<StepSection title="Work History" content={$workHistory}></StepSection>
+		<StepWorkSection title="Work History" histories={$workHistory}></StepWorkSection>
 		<!-- <StepSection title="Skill" content={$skill}></StepSection> -->
 		<!-- <StepSection id="Language" content={$language}></StepSection> -->
 		<StepSection title="Education" content={$education}></StepSection>

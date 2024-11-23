@@ -42,9 +42,21 @@
 	</form>
 
 	<div id="list">
-		{#each histories as history}
-			{history.company}
-		{/each}
+		<lu>
+			{#each histories as history}
+				<li>
+					<div class="history-item">
+						<div class="history-details">
+							{history.company}
+							{history.start?.toDateString()} ~ {history.end?.toDateString()}
+							<hr class="fancy-hr" />
+							<span class="description">{history.description}</span>
+						</div>
+						<button class="remove-button">Remove</button>
+					</div>
+				</li>
+			{/each}
+		</lu>
 	</div>
 </div>
 <Cta href="/start/skill" label="Next" {click} />
@@ -80,10 +92,28 @@
 	}
 
 	#list {
-		border: solid 1px #ccc;
 		border-radius: 4px;
 		flex: 1;
 		min-width: 200px;
+	}
+
+	button {
+		border-radius: 4px;
+		background-color: #008cba; /* Match the label color */
+		color: white; /* White text */
+		padding: 10px 20px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	button:hover {
+		background-color: #007ba7; /* Slightly darker blue on hover */
+	}
+
+	button:active {
+		box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2); /* Shadow in the right upper corner */
+		transform: translate(1px, 1px); /* Slightly move the button to enhance the press effect */
 	}
 
 	label {
@@ -106,5 +136,74 @@
 		background-color: #f8f8f8;
 		font-size: 16px;
 		resize: none;
+	}
+
+	li {
+		list-style-type: none; /* Remove default bullet */
+		position: relative; /* Position for custom bullet */
+		background-color: #f0f8ff; /* Light blue background */
+		border: solid 1px #008cba; /* Match the label color */
+		border-radius: 8px;
+		padding: 10px; /* Adjust padding for better layout */
+		margin-bottom: 10px;
+		color: #333; /* Dark text for contrast */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		transition: background-color 0.3s ease;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.history-details {
+		flex-grow: 1;
+	}
+
+	.remove-button {
+		border-radius: 4px;
+		background-color: #800080; /* Purple color for remove action */
+		color: white;
+		padding: 8px 16px;
+		border: none;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.remove-button:hover {
+		background-color: #6a006a; /* Darker purple on hover */
+	}
+
+	.remove-button:active {
+		box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2);
+		transform: translate(1px, 1px);
+	}
+
+	.fancy-hr {
+		border: none;
+		height: 1px;
+		background: linear-gradient(to right, #008cba, transparent);
+		margin: 10px 0;
+	}
+
+	.description {
+		display: inline-block;
+		max-width: 500px; /* Set a maximum width */
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	/**/
+	/* li::before { */
+	/* 	content: '•';  */
+	/* 	color: #008cba;  */
+	/* 	font-size: 20px;  */
+	/* 	position: absolute; */
+	/* 	left: 10px;  */
+	/* 	top: 50%; */
+	/* 	transform: translateY(-50%); */
+	/* } */
+
+	li:hover {
+		background-color: #e0f0ff; /* Slightly darker on hover */
 	}
 </style>

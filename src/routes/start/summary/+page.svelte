@@ -5,15 +5,6 @@
 
 	let textareaContent = 'Some text...';
 
-	user.set(
-		new User({
-			name: 'kyeongmi kim',
-			headComment: 'GameServer / Backend Programmer',
-			city: 'Seongnam-si',
-			email: 'nolleh7707@gmail.com'
-		})
-	);
-
 	function saveContent(event: Event) {
 		intro.set(textareaContent);
 		return true;

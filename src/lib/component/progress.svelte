@@ -43,6 +43,7 @@
 		width: 70%;
 		/* background: red; */
 		margin: auto;
+		display: block;
 	}
 
 	.progressbar {
@@ -51,8 +52,7 @@
 		justify-content: space-between;
 	}
 
-	.progressbar li,
-	button {
+	.progressbar button {
 		list-style-type: none;
 		/* width: 25%; */
 		flex: 1;
@@ -62,14 +62,7 @@
 		background: none;
 	}
 
-	.progressbar li div.progress-text {
-		margin: 5px auto 0;
-		width: 55%;
-		text-align: center;
-	}
-
-	.progressbar li:before,
-	button:before {
+	.progressbar button:before {
 		content: counter(step);
 		counter-increment: step;
 		color: black;
@@ -85,13 +78,11 @@
 		margin: 0 auto;
 	}
 
-	.progressbar li:hover::before,
-	button:hover::before {
+	.progressbar button:hover::before {
 		background-color: #a3dffb;
 	}
 
-	.progressbar li.active:before,
-	button.active:before {
+	.progressbar button.active:before {
 		color: white;
 		background: #0869bd;
 		border: $circleBorderWidth solid #ffffff;
@@ -103,8 +94,7 @@
 		font-size: 12px;
 	}
 
-	.progressbar li.completed:before,
-	button.completed:before {
+	.progressbar button.completed:before {
 		content: '';
 		background: url('/assets/icons/check.svg') 0 3px no-repeat;
 		background-repeat: no-repeat;
@@ -114,8 +104,7 @@
 		border: 1px solid white;
 	}
 
-	.progressbar li:after,
-	button:after {
+	.progressbar button:after {
 		content: '';
 		position: absolute;
 		width: calc(100% - #{($circleSize + $circleBorderWidth * 2 + $lineOffset * 2)});
@@ -126,8 +115,7 @@
 		z-index: -1;
 	}
 
-	.progressbar li:first-child:after,
-	button:first-child:after {
+	.progressbar button:first-child:after {
 		content: none;
 	}
 </style>

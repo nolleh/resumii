@@ -26,6 +26,7 @@
 				email: email
 			})
 		);
+    console.log("saved", $user)
 		return true;
 	}
 </script>

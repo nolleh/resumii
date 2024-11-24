@@ -4,6 +4,9 @@
 Generate Your Resume For Free
 Put your information to be shown in resume step by step, get generated resume. 
 
+> [!Note] Try Here
+> [https://resumiii.vercel.app]() 
+
 ## For Free
 Resumii is provided for free.
 

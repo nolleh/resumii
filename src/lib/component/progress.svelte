@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	
-  $: currentPage = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
-	
-  const steps = ['intro', 'summary', 'work', 'skill', 'lang', 'edu', 'view'];
+
+	$: currentPage = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
+
+	const steps = ['intro', 'summary', 'skill', 'work', 'lang', 'edu', 'view'];
 
 	const activeClass = (page: string) => {
 		const currentIndex = steps.indexOf(currentPage);
@@ -16,7 +16,6 @@
 		}
 		return '';
 	};
-
 </script>
 
 <div class="progressBar-container col-centered">
@@ -28,17 +27,17 @@
 		<button class={activeClass('summary')} on:click={(_) => goto('/start/summary')}>
 			<div class="progress-text">Summary</div>
 		</button>
+		<button class={activeClass('skill')} on:click={(_) => goto('/start/skill')}>
+			<div class="progress-text">Skill</div>
+		</button>
 		<button class={activeClass('work')} on:click={(_) => goto('/start/work')}>
 			<div class="progress-text">Work</div>
 		</button>
-		<button class={activeClass('skill')} on:click= {(_) => goto('/start/skill')}>
-			<div class="progress-text">Skill</div>
-		</button>
-		<button class={activeClass('lang')}>
+		<button class={activeClass('lang')} on:click={(_) => goto('/start/lang')}>
 			<div class="progress-text">Lang</div>
 		</button>
 
-		<button class={activeClass('edu')}>
+		<button class={activeClass('edu')} on:click={(_) => goto('start/edu')}>
 			<div class="progress-text">Education</div>
 		</button>
 

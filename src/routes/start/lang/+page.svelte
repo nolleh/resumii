@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
-	import { Level, skill, defaultSkills } from '$lib/store';
+	import { Level, language, defaultLangs } from '$lib/store';
 
 	let title: string = '';
 	let level: number | null = null;
-	let skills: Level[] = [];
+	let languages: Level[] = [];
 
 	const add = (_: Event) => {
-		skills = [
-			...skills,
+		languages = [
+			...languages,
 			new Level({
 				title: title,
 				level: level ? level : 0
@@ -18,8 +18,8 @@
 	};
 
 	const remove = (_: Event, idx: number) => {
-		skills.splice(idx, 1);
-		skills = skills;
+		languages.splice(idx, 1);
+		languages = languages;
 	};
 
 	const click = (event: Event) => {
@@ -37,12 +37,12 @@
 	</form>
 	<div id="list">
 		<lu>
-			{#each skills as skill, idx}
+			{#each languages as lang, idx}
 				<li>
 					<div class="item">
-						{skill.title}
+						{lang.title}
 						<div class="details">
-							{skill.level}
+							{lang.level}
 						</div>
 						<button
 							class="remove-button"
@@ -56,12 +56,12 @@
 		</lu>
 	</div>
 </div>
-<Cta href="/start/work" label="Next" {click} />
+<Cta href="/start/edu" label="Next" {click} />
 <button
 	class="default-btn"
 	on:click={() => {
-		skill.set(defaultSkills);
-		goto('/start/work');
+		language.set(defaultLangs);
+		goto('/start/edu');
 	}}>default</button
 >
 

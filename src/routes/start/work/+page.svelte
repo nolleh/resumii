@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
 	import { WorkHistory, workHistory, defaultWorkHistory } from '$lib/store';
-  import { getYm } from '$lib/util';
+	import { getYm } from '$lib/util';
 
 	let company = 'Some Company..';
-  let title = 'Tech Leading Backend Engineer';
+	let title = 'Tech Leading Backend Engineer';
 	let startedAt = new Date();
 	let endedAt = new Date();
 	let textareaContent = 'Some Text..';
@@ -15,7 +16,7 @@
 			...histories,
 			new WorkHistory({
 				company: company,
-        title: title,
+				title: title,
 				start: startedAt,
 				end: endedAt,
 				description: textareaContent
@@ -24,9 +25,8 @@
 	};
 
 	const remove = (_: Event, idx: number) => {
-		console.log('remove', histories.length);
-    histories.splice(idx, 1);
-    histories = histories;
+		histories.splice(idx, 1);
+		histories = histories;
 	};
 
 	const click = (_: Event) => {
@@ -45,7 +45,7 @@
 			<label> started at: <input type="date" bind:value={startedAt} /> </label>
 			<label> until at: <input type="date" bind:value={endedAt} /> </label>
 			<textarea bind:value={textareaContent}></textarea>
-			<button on:click={add}>add</button>
+			<button id="add" on:click={add}>add</button>
 		</fieldset>
 	</form>
 
@@ -56,8 +56,8 @@
 					<div class="history-item">
 						<div class="history-details">
 							{history.company}
-							[{getYm(history.start?)} ~ {getYm(history.end)}] <br/>
-              {history.title}
+							[{getYm(history.start?)} ~ {getYm(history.end)}] <br />
+							{history.title}
 							<hr class="fancy-hr" />
 							<span class="description">{history.description}</span>
 						</div>
@@ -73,7 +73,15 @@
 		</lu>
 	</div>
 </div>
-<Cta href="/start/skill" label="Next" {click} />
+<Cta href="/start/lang" label="Next" {click} />
+
+<button
+	class="default-btn"
+	on:click={() => {
+		workHistory.set(defaultWorkHistory);
+		goto('/start/lang');
+	}}>default</button
+>
 
 <!-- <Example defaultData={defaultWorkHistory} /> -->
 
@@ -111,7 +119,7 @@
 		min-width: 200px;
 	}
 
-	button {
+	#add {
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */
@@ -121,11 +129,11 @@
 		transition: background-color 0.3s ease;
 	}
 
-	button:hover {
+	#add:hover {
 		background-color: #007ba7; /* Slightly darker blue on hover */
 	}
 
-	button:active {
+	#add:active {
 		box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2); /* Shadow in the right upper corner */
 		transform: translate(1px, 1px); /* Slightly move the button to enhance the press effect */
 	}
@@ -171,6 +179,10 @@
 	.history-details {
 		flex-grow: 1;
 	}
+
+  .default-btn {
+    width: fit-content;
+  }
 
 	.remove-button {
 		border-radius: 4px;

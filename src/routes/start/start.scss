@@ -1,0 +1,17 @@
+.default-btn {
+  /* inner shadow */
+  box-shadow: inset 0px 1px 0px 0px #4d73bf;
+  background: #4267b2;
+  border: 1px solid #4267b2;
+  color: #fff;
+  text-shadow: 0 1px 0px #3359a5;
+}
+
+.default-btn:hover {
+  background: #2b54a7;
+}
+
+.default-btn:active {
+  background: #1d4698;
+  border-color: #1d4698;
+}

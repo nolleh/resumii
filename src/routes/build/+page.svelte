@@ -10,6 +10,7 @@
 		accomplishment
 	} from '$lib/store';
 	import StepSection from '$lib/component/step-section.svelte';
+  import StepLevel from '$lib/component/step-level.svelte';
 	import StepWorkSection from '$lib/component/step-work-section.svelte';
 </script>
 
@@ -26,9 +27,9 @@
 			{@html $user.email}
 		</div>
 		<StepSection title={$summary.title} content={$summary.content}></StepSection>
+		<StepLevel title="Skills" levels={$skill}></StepLevel>
 		<StepWorkSection title="Work History" histories={$workHistory}></StepWorkSection>
-		<!-- <StepSection title="Skill" content={$skill}></StepSection> -->
-		<!-- <StepSection id="Language" content={$language}></StepSection> -->
+		<StepLevel title="Languages" levels={$language}></StepLevel>
 		<StepSection title="Education" content={$education}></StepSection>
 		<StepSection title="Certification" content={$certification}></StepSection>
 		<StepSection title="Accomplishment" content={$accomplishment}></StepSection>

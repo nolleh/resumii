@@ -20,9 +20,10 @@
 <h2>Summary</h2>
 
 <p>describe yourself, introduction that will be shown first.</p>
-<form>
+<form action="/start/skill">
 	<textarea bind:value={textareaContent}></textarea>
-	<Cta href="/start/work" label="Next" click={saveContent} />
+	<Cta href="/start/skill" label="Next" click={saveContent} />
+	<button class="default-btn" on:click={() => summary.set(defaultSummary)}>default</button>
 </form>
 
 <Example title={defaultSummary.title} defaultData={defaultSummary.content} />

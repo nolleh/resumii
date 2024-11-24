@@ -8,7 +8,7 @@
 		email: string,
 		city: string = '';
 
-	function saveContent(event: Event) {
+	function saveContent() {
 		user.set(
 			new User({
 				name: name,
@@ -21,10 +21,11 @@
 	}
 </script>
 
+<link rel="stylesheet" href="src/routes/start/start.scss" />
 <h2>Intro</h2>
 <p>put your basic information</p>
 
-<form id="basic">
+<form id="basic" action="/start/summary">
 	<fieldset>
 		<label>name: <input bind:value={name} /></label>
 		<label>professional title: <input bind:value={comment} /></label>
@@ -33,6 +34,7 @@
 		<p>
 			<Cta href="/start/summary" label="Next" click={saveContent} />
 		</p>
+		<button class="default-btn" on:click={() => user.set(defaultUser)}>default</button>
 	</fieldset>
 </form>
 

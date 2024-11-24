@@ -3,7 +3,7 @@
 </script>
 
 <header class="header">
-	<p class="header__text--thin">Resume Generator</p>
+	<p class="header__text--thin">Resumii</p>
 	<p class="header__text--bold">Generate Your Resume For Free</p>
 	<p class="header__description">
 		put your information to be shown in resume step by step, get generated resume

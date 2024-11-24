@@ -1,10 +1,45 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
 .content {
   display: flex;
   overflow-y: auto;
 }
 
 .left {
-  width: 25%;
+  width: 40%;
   background: #135;
   overflow-y: auto;
   align-self: stretch;
@@ -45,10 +80,23 @@
   display: inline-block;
 }
 
+.company {
+  padding: 15px 0px;
+}
+
 .company-mark {
   position: absolute;
   left: 20px;
   color: #ddd;
+}
+
+.company .title {
+  font-weight: bold;
+}
+
+.company .title,
+.desc {
+  margin: 10px;
 }
 
 .fluent {
@@ -58,4 +106,3 @@
   border-radius: 50%;
   background-color: #147;
 }
-

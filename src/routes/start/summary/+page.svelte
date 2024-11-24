@@ -1,12 +1,18 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import Example from '$lib/component/example.svelte';
-	import { summary, defaultSummary } from '$lib/store';
+	import { Summary, summary, defaultSummary } from '$lib/store';
 
+	let title = 'Software Developer';
 	let textareaContent = 'Some text...';
 
 	function saveContent(event: Event) {
-		summary.set(textareaContent);
+		summary.set(
+			new Summary({
+				title: title,
+				content: textareaContent
+			})
+		);
 		return true;
 	}
 </script>
@@ -19,7 +25,7 @@
 	<Cta href="/start/work" label="Next" click={saveContent} />
 </form>
 
-<Example defaultData={defaultSummary}/>
+<Example title={defaultSummary.title} defaultData={defaultSummary.content} />
 
 <style>
 	textarea {

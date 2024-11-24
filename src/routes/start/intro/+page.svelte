@@ -59,8 +59,8 @@
 		margin-top: 20px;
 		width: 500px;
 		color: #008cba;
-    /* to allow width setting */
-		display: inline-block; 
+		/* to allow width setting */
+		display: inline-block;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: right;

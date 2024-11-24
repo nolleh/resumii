@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { WorkHistory } from '$lib/store';
-	import StepSection from './step-section.svelte';
+	import { getYm } from '$lib/util';
 
 	export let title: string | null = null;
 	export let histories: WorkHistory[];
@@ -12,19 +12,29 @@
 		<h3>{title}</h3>
 	{/if}
 
-	<div class="company">
+	<section class="history">
 		{#each histories as history}
-			<div class="company-mark">
-				<span class="dot"> </span>
-				{@html history.company}
+			<div class="company">
+				<div class="company-mark">
+					<span class="dot"> </span>
+					<b>{@html history.company}</b>
+				</div>
+				<div>
+					<span class="dot"> </span>
+					<b
+						>{@html history.company}
+						[{getYm(history.start)} ~ {getYm(history.end)}]
+					</b>
+				</div>
+        <div class="title">
+					{@html history.title}
+        </div>
+				<div class="desc">
+					{@html history.description}
+				</div>
 			</div>
-			<div>
-				<span class="dot"> </span>
-				{@html history.company}
-			</div>
-			{@html history.description}
 		{/each}
-	</div>
+	</section>
 </section>
 
 <style lang="scss">

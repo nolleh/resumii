@@ -1,24 +1,32 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import { WorkHistory, workHistory, defaultWorkHistory } from '$lib/store';
+  import { getYm } from '$lib/util';
 
 	let company = 'Some Company..';
+  let title = 'Tech Leading Backend Engineer';
 	let startedAt = new Date();
 	let endedAt = new Date();
 	let textareaContent = 'Some Text..';
 	let histories: WorkHistory[] = [];
 
 	const add = (_: Event) => {
-		console.log('add', histories.length);
 		histories = [
 			...histories,
 			new WorkHistory({
 				company: company,
+        title: title,
 				start: startedAt,
 				end: endedAt,
 				description: textareaContent
 			})
 		];
+	};
+
+	const remove = (_: Event, idx: number) => {
+		console.log('remove', histories.length);
+    histories.splice(idx, 1);
+    histories = histories;
 	};
 
 	const click = (_: Event) => {
@@ -43,16 +51,22 @@
 
 	<div id="list">
 		<lu>
-			{#each histories as history}
+			{#each histories as history, idx}
 				<li>
 					<div class="history-item">
 						<div class="history-details">
 							{history.company}
-							{history.start?.toDateString()} ~ {history.end?.toDateString()}
+							[{getYm(history.start?)} ~ {getYm(history.end)}] <br/>
+              {history.title}
 							<hr class="fancy-hr" />
 							<span class="description">{history.description}</span>
 						</div>
-						<button class="remove-button">Remove</button>
+						<button
+							class="remove-button"
+							on:click={(e) => {
+								remove(e, idx);
+							}}>Remove</button
+						>
 					</div>
 				</li>
 			{/each}

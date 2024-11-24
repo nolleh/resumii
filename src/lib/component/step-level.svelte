@@ -17,6 +17,7 @@
       case 1:
         return 'Novice';
     }
+    return '';
   }
 </script>
 

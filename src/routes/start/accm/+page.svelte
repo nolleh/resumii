@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
-	import { Summary, education, defaultEdus } from '$lib/store';
+	import { Summary, accomplishment, defaultAccoms } from '$lib/store';
 
 	let title: string = '';
 	let content: string = '';
@@ -22,12 +22,14 @@
 		summaries = summaries;
 	};
 
-	const click = (event: Event) => {
-    education.set(summaries);
+	const click = (_: Event) => {
+    accomplishment.set(summaries);
 		return true;
 	};
 </script>
 
+<h2>Accomplishments</h2>
+<p>Put your accomplishments. Press add button as you needed, then press next</p>
 <div id="container">
 	<form id="basic">
 		<fieldset>
@@ -57,12 +59,12 @@
 		</lu>
 	</div>
 </div>
-<Cta href="/start/cert" label="Next" {click} />
+<Cta href="/build" label="Next" {click} />
 <button
 	class="default-btn"
 	on:click={() => {
-		education.set(defaultEdus);
-		goto('/start/cert');
+		accomplishment.set(defaultAccoms);
+		goto('/build');
 	}}>default</button
 >
 

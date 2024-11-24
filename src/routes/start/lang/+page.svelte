@@ -23,6 +23,7 @@
 	};
 
 	const click = (event: Event) => {
+    language.set(languages);
 		return true;
 	};
 </script>

@@ -22,7 +22,8 @@
 		skills = skills;
 	};
 
-	const click = (event: Event) => {
+	const click = (_: Event) => {
+    skill.set(skills);
 		return true;
 	};
 </script>

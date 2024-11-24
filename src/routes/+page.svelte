@@ -14,18 +14,18 @@
 	<div class="card card--aqua">
 		<h2 class="card__title">No Signup</h2>
 		<p class="card__description">no need to signup, login. we don't save your information.</p>
-		<img src="images/icon-supervisor.svg" alt="icon supervisor" class="card__icon" />
+		<!-- <img src="images/icon-supervisor.svg" alt="icon supervisor" class="card__icon" /> -->
 	</div>
 	<div class="double-card">
 		<div class="card card--red">
 			<h2 class="card__title">For Free</h2>
 			<p class="card__description">resume generator is provided for free.</p>
-			<img src="images/icon-team-builder.svg" alt="icon team-builder" class="card__icon" />
+			<!-- <img src="images/icon-team-builder.svg" alt="icon team-builder" class="card__icon" /> -->
 		</div>
 		<div class="card card--orange">
 			<h2 class="card__title">Blazing Easy</h2>
 			<p class="card__description">follow just few steps to make it.</p>
-			<img src="images/icon-karma.svg" alt="icon karma" class="card__icon" />
+			<!-- <img src="images/icon-karma.svg" alt="icon karma" class="card__icon" /> -->
 		</div>
 	</div>
 	<div class="card card--blue">
@@ -34,7 +34,7 @@
 			The generator code is maintained as open source. you can read / contribute the code, and you
 			can see that generator doesn't save your information.
 		</p>
-		<img src="images/icon-calculator.svg" alt="icon Calculator" class="card__icon" />
+		<!-- <img src="images/icon-calculator.svg" alt="icon Calculator" class="card__icon" /> -->
 	</div>
 </section>
 

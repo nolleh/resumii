@@ -4,7 +4,7 @@
 
 	$: currentPage = $page.url.pathname.slice($page.url.pathname.lastIndexOf('/') + 1);
 
-	const steps = ['intro', 'summary', 'skill', 'work', 'lang', 'edu', 'view'];
+	const steps = ['intro', 'summary', 'skill', 'work', 'lang', 'edu', 'cert', 'accm', 'view'];
 
 	const activeClass = (page: string) => {
 		const currentIndex = steps.indexOf(currentPage);
@@ -36,9 +36,14 @@
 		<button class={activeClass('lang')} on:click={(_) => goto('/start/lang')}>
 			<div class="progress-text">Lang</div>
 		</button>
-
-		<button class={activeClass('edu')} on:click={(_) => goto('start/edu')}>
+		<button class={activeClass('edu')} on:click={(_) => goto('/start/edu')}>
 			<div class="progress-text">Education</div>
+		</button>
+		<button class={activeClass('cert')} on:click={(_) => goto('/start/cert')}>
+			<div class="progress-text">Certification</div>
+		</button>
+		<button class={activeClass('accm')} on:click={(_) => goto('/start/accm')}>
+			<div class="progress-text">Accomplishment</div>
 		</button>
 
 		<button class={activeClass('view')} on:click={(_) => goto('/build')}>

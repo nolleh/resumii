@@ -10,9 +10,9 @@ export class User {
 }
 
 export const defaultUser: User = new User({
-  name: '<b> Kyeong-mi Kim </b>',
+  name: '<b> John Doe </b>',
   professionalTitle: 'GameServer / Backend Programmer',
   city: 'Seongnam-si',
-  email: 'nolleh7707@gmail.com'
+  email: 'johndoe@no.mail'
 });
 

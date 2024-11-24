@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
-	import { Summary, education, defaultEdus } from '$lib/store';
+	import { Summary, certification, defaultCerts } from '$lib/store';
 
 	let title: string = '';
 	let content: string = '';
@@ -23,11 +23,13 @@
 	};
 
 	const click = (event: Event) => {
-    education.set(summaries);
+    certification.set(summaries);
 		return true;
 	};
 </script>
 
+<h2>Certifications</h2>
+<p>Put your certifications. press add button as you needed, then press next</p>
 <div id="container">
 	<form id="basic">
 		<fieldset>
@@ -57,12 +59,12 @@
 		</lu>
 	</div>
 </div>
-<Cta href="/start/cert" label="Next" {click} />
+<Cta href="/start/accm" label="Next" {click} />
 <button
 	class="default-btn"
 	on:click={() => {
-		education.set(defaultEdus);
-		goto('/start/cert');
+		certification.set(defaultCerts);
+		goto('/start/accm');
 	}}>default</button
 >
 

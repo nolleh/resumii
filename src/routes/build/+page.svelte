@@ -12,6 +12,7 @@
 	import StepSection from '$lib/component/step-section.svelte';
   import StepLevel from '$lib/component/step-level.svelte';
 	import StepWorkSection from '$lib/component/step-work-section.svelte';
+  import StepDotSection from '$lib/component/step-dot-item.svelte';
 </script>
 
 <link rel="stylesheet" href="src/routes/build/build.scss" />
@@ -30,9 +31,9 @@
 		<StepLevel title="Skills" levels={$skill}></StepLevel>
 		<StepWorkSection title="Work History" histories={$workHistory}></StepWorkSection>
 		<StepLevel title="Languages" levels={$language}></StepLevel>
-		<StepSection title="Education" content={$education}></StepSection>
-		<StepSection title="Certification" content={$certification}></StepSection>
-		<StepSection title="Accomplishment" content={$accomplishment}></StepSection>
+		<StepDotSection title="Education" histories={$education}></StepDotSection>
+		<StepDotSection title="Certification" histories={$certification}></StepDotSection>
+		<StepDotSection title="Accomplishment" histories={$accomplishment}></StepDotSection>
 	</div>
 </div>
 

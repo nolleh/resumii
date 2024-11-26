@@ -81,10 +81,11 @@
 		}
 	}
 	fieldset {
-		width: 560px;
+		max-width: 560px;
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
+
 	@media (min-width: 600px) {
 		fieldset {
 			width: 560px;
@@ -99,7 +100,7 @@
 	}
 
 	label {
-		width: 500px;
+		max-width: 500px;
 		display: inline-block;
 		color: #008cba;
 		margin-top: 20px;
@@ -120,6 +121,7 @@
 	}
 
 	#add {
+		margin-top: 10px;
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */

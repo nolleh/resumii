@@ -80,17 +80,18 @@
 			flex-direction: column;
 		}
 	}
+
 	fieldset {
-		width: 560px;
+		max-width: 560px;
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
+
 	@media (min-width: 600px) {
 		fieldset {
 			width: 560px;
 		}
 	}
-
 
 	#list {
 		border-radius: 4px;
@@ -99,8 +100,8 @@
 	}
 
 	label {
-		width: 500px;
-		display: inline-block;
+		max-width: 500px;
+		display: block;
 		color: #008cba;
 		margin-top: 20px;
 		/* margin-left: auto; */
@@ -120,6 +121,7 @@
 	}
 
 	#add {
+		margin-top: 10px;
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */

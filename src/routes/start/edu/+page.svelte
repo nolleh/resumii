@@ -91,7 +91,6 @@
 		}
 	}
 
-
 	#list {
 		border-radius: 4px;
 		flex: 1;
@@ -120,6 +119,7 @@
 	}
 
 	#add {
+		margin-top: 10px;
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */

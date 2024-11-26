@@ -101,7 +101,7 @@
 
 	label {
 		max-width: 500px;
-		display: inline-block;
+		display: block;
 		color: #008cba;
 		margin-top: 20px;
 		/* margin-left: auto; */

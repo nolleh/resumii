@@ -65,6 +65,30 @@
 		justify-content: center;
 	}
 
+	@media (max-width: 600px) {
+		$circleSize: 30px;
+		$circleBorderWidth: 3px;
+		$lineOffset: 7px;
+
+		.progressbar button:before {
+			width: $circleSize;
+			height: $circleSize;
+			line-height: $circleSize;
+		}
+
+		.progressbar button.active:before {
+			width: $circleSize - $circleBorderWidth * 1.5 + 2;
+			height: $circleSize - $circleBorderWidth * 1.5 + 2;
+			line-height: $circleSize - $circleBorderWidth * 1.5 + 2;
+		}
+
+		.progressbar button:after {
+			width: calc(100% - #{($circleSize + $circleBorderWidth * 2 + $lineOffset * 2)});
+			top: calc($circleSize / 2);
+			left: calc(-50% + #{(calc($circleSize / 2) + $circleBorderWidth + $lineOffset)});
+		}
+	}
+
 	.progressbar {
 		counter-reset: step;
 		display: flex;

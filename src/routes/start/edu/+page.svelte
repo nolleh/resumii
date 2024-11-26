@@ -79,7 +79,7 @@
 		}
 	}
 	fieldset {
-		width: 560px;
+		max-width: 560px;
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
@@ -91,8 +91,8 @@
 	}
 
 	label {
-		width: 500px;
-		display: inline-block;
+		max-width: 500px;
+		display: block;
 		color: #008cba;
 		margin-top: 20px;
 		/* margin-left: auto; */

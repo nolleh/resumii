@@ -6,7 +6,9 @@
 	<p class="header__text--thin">Resumii</p>
 	<p class="header__text--bold">Generate Your Resume For Free</p>
 	<p class="header__description">
-		Put your information to be shown in resume step by step, get generated resume
+		Put your information to be shown in resume step by step, get generated resume.
+    <br/>
+    <a href="https://github.com/nolleh/resumii">github</a>
 	</p>
 </header>
 
@@ -33,6 +35,7 @@
 		<p class="card__description">
 			The Resumii code is maintained as open source. you can read / contribute the code, and you
 			can see that it doesn't save your information.
+    <a href="https://github.com/nolleh/resumii">github</a>
 		</p>
 		<!-- <img src="images/icon-calculator.svg" alt="icon Calculator" class="card__icon" /> -->
 	</div>

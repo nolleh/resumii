@@ -47,7 +47,7 @@
 	/* } */
 
 	#basic fieldset {
-		width: 560px;
+		max-width: 560px;
 		/* margin: 0 auto; */
 		border-radius: 4px;
 		border: 1px solid #ccc;
@@ -59,10 +59,10 @@
 
 	label {
 		margin-top: 20px;
-		width: 500px;
+		max-width: 500px;
 		color: #008cba;
 		/* to allow width setting */
-		display: inline-block;
+		display: block;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: right;

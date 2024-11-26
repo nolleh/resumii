@@ -79,6 +79,12 @@
 		line-height: 1.1;
 	}
 
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+
 	.app {
 		width: 100%;
 		height: 100%;

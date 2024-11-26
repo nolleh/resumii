@@ -6,7 +6,7 @@
 	export let histories: WorkHistory[];
 </script>
 
-<link rel="stylesheet" href="src/routes/build/build.scss" />
+<!-- <link rel="stylesheet" href="src/routes/build/build.scss" /> -->
 <section>
 	{#if title}
 		<h3>{title}</h3>
@@ -17,7 +17,7 @@
 			<div class="company">
 				<div class="company-mark">
 					<span class="dot"> </span>
-					<b>{@html history.company}</b>
+					<b class="company">{@html history.company}</b>
 				</div>
 				<div>
 					<span class="dot"> </span>
@@ -140,6 +140,12 @@
 		position: absolute;
 		left: 20px;
 		color: #ddd;
+	}
+
+	@media (max-width: 1000px) {
+		.company-mark b {
+			display: none;
+		}
 	}
 
 	.company .title {

@@ -99,7 +99,7 @@
 	}
 
 	#basic {
-		width: 760px;
+		max-width: 760px;
 		/* flex: 1; */
 	}
 
@@ -139,10 +139,10 @@
 	}
 
 	label {
-		width: 500px;
+		max-width: 500px;
 		color: #008cba;
 		/* to allow width setting */
-		display: inline-block;
+		display: block;
 		margin-left: auto;
 		margin-right: auto;
 		font-weight: bold;

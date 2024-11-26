@@ -27,6 +27,11 @@
 		border: 1px solid gray;
 		padding: 8px;
 	}
+	@media (max-width: 1000px) {
+		div {
+			margin: 10px;
+		}
+	}
 
 	h1 {
 		text-align: center;

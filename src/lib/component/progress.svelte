@@ -59,10 +59,13 @@
 
 	.progressBar-container {
 		width: 100%;
-		max-width: 70%;
+		max-width: 100%;
 		margin: auto;
 		display: flex;
 		justify-content: center;
+		overflow-x: auto; /* Allow horizontal scrolling if needed */
+		padding: 0 10px; /* Add some padding to prevent overflow */
+		box-sizing: border-box; /* Include padding in the element's total width and height */
 	}
 
 	@media (max-width: 600px) {
@@ -94,17 +97,17 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		padding: 0;
+		border: none;
+		background: none;
 	}
 
 	.progressbar button {
 		list-style-type: none;
-		/* width: 25%; */
 		flex: 1;
 		position: relative;
-		/* float: left; */
 		border: none;
 		background: none;
+		// min-width: 80px; /* Ensure buttons have a minimum width */
 	}
 
 	.progressbar button:before {

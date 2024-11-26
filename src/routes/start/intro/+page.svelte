@@ -21,7 +21,6 @@
 	}
 </script>
 
-<link rel="stylesheet" href="src/routes/start/start.scss" />
 <h2>Intro</h2>
 <p>put your basic information</p>
 
@@ -31,10 +30,10 @@
 		<label>professional title: <input bind:value={comment} /></label>
 		<label>email: <input bind:value={email} /></label>
 		<label>city: <input bind:value={city} /></label>
-		<p>
+		<div>
 			<Cta href="/start/summary" label="Next" click={saveContent} />
-		</p>
-		<button class="default-btn" on:click={() => user.set(defaultUser)}>default</button>
+			<button class="default-btn" on:click={() => user.set(defaultUser)}>default</button>
+		</div>
 	</fieldset>
 </form>
 

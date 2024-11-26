@@ -93,17 +93,6 @@
 		align-self: stretch;
 	}
 
-	@media print {
-		.left {
-			width: 50%;
-			background: #135;
-			overflow-y: auto;
-			align-self: stretch;
-		}
-		.right {
-			width: 100%;
-		}
-	}
 
 	.right {
 		padding-left: 1rem;
@@ -145,6 +134,20 @@
 	@media (max-width: 1000px) {
 		.company-mark b {
 			display: none;
+		}
+	}
+	@media print {
+		.left {
+			width: 50%;
+			background: #135;
+			overflow-y: auto;
+			align-self: stretch;
+		}
+		.right {
+			width: 100%;
+		}
+		.company-mark b {
+			display: inline-block;
 		}
 	}
 

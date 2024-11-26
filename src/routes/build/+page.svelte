@@ -79,11 +79,11 @@
 		line-height: 1.1;
 	}
 
-  @media (max-width: 1000px) {
-    h1 {
-      font-size: 2.5em;
-    }
-  }
+	@media (max-width: 1000px) {
+		h1 {
+			font-size: 2.5em;
+		}
+	}
 
 	.app {
 		width: 100%;
@@ -100,6 +100,12 @@
 		background: #135;
 		overflow-y: auto;
 		align-self: stretch;
+	}
+
+	@media (max-width: 1000px) {
+		.left {
+			width: 35%;
+		}
 	}
 
 	@media print {

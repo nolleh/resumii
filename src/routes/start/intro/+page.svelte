@@ -22,7 +22,7 @@
 </script>
 
 <h2>Intro</h2>
-<p>put your basic information</p>
+<p>Put your basic information</p>
 
 <form id="basic" action="/start/summary">
 	<fieldset>

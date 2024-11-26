@@ -85,6 +85,12 @@
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
+	@media (min-width: 600px) {
+		fieldset {
+			width: 560px;
+		}
+	}
+
 
 	#list {
 		border-radius: 4px;

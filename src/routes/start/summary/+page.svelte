@@ -18,8 +18,8 @@
 </script>
 
 <h2>Summary</h2>
+<p>Describe yourself, introduction that will be shown first.</p>
 
-<p>describe yourself, introduction that will be shown first.</p>
 <form action="/start/skill">
 	<textarea bind:value={textareaContent}></textarea>
 	<Cta href="/start/skill" label="Next" click={saveContent} />

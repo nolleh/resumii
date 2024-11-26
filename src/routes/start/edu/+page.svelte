@@ -28,6 +28,8 @@
 	};
 </script>
 
+<h2>Education</h2>
+<p>Add your educations</p>
 <div id="container">
 	<form id="basic">
 		<fieldset>
@@ -83,6 +85,12 @@
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
+	@media (min-width: 600px) {
+		fieldset {
+			width: 560px;
+		}
+	}
+
 
 	#list {
 		border-radius: 4px;

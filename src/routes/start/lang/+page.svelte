@@ -23,10 +23,13 @@
 	};
 
 	const click = (event: Event) => {
-    language.set(languages);
+		language.set(languages);
 		return true;
 	};
 </script>
+
+<h2>Language</h2>
+<p>Add your language, level range is 0~5</p>
 
 <div id="container">
 	<form id="basic">
@@ -83,6 +86,11 @@
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
+	@media (min-width: 600px) {
+		fieldset {
+			width: 560px;
+		}
+	}
 
 	#list {
 		border-radius: 4px;
@@ -112,6 +120,7 @@
 	}
 
 	#add {
+		margin-top: 10px;
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */

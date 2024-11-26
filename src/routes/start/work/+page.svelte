@@ -36,7 +36,7 @@
 </script>
 
 <h2>Work History</h2>
-<p>put your work history and press add button until your all career path are written.</p>
+<p>Put your work history and press add button until your all career path are written.</p>
 
 <div id="container">
 	<form id="basic">

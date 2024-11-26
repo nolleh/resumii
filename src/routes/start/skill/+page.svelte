@@ -23,10 +23,12 @@
 	};
 
 	const click = (_: Event) => {
-    skill.set(skills);
+		skill.set(skills);
 		return true;
 	};
 </script>
+<h2>Skill</h2>
+<p>Add your Skills, level range is 0 ~ 5</p>
 
 <div id="container">
 	<form id="basic">
@@ -78,10 +80,16 @@
 			flex-direction: column;
 		}
 	}
+
 	fieldset {
-		max-width: 560px;
 		border-radius: 4px;
 		border: 1px solid #ccc;
+	}
+
+	@media (min-width: 600px) {
+		fieldset {
+			width: 560px;
+		}
 	}
 
 	#list {
@@ -95,8 +103,8 @@
 		display: block;
 		color: #008cba;
 		margin-top: 20px;
-		/* margin-left: auto; */
-		/* margin-right: auto; */
+		margin-left: auto;
+		margin-right: auto;
 		text-align: right;
 		font-weight: bold;
 	}
@@ -112,6 +120,7 @@
 	}
 
 	#add {
+    margin-top: 10px;
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */

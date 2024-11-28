@@ -4,7 +4,7 @@
 	import { Summary, summary, defaultSummary } from '$lib/store';
 
 	let title = 'Software Developer';
-	let textareaContent = 'Some text...';
+	let textareaContent = '';
 
 	function saveContent(event: Event) {
 		summary.set(
@@ -21,7 +21,7 @@
 <p>Describe yourself, introduction that will be shown first.</p>
 
 <form action="/start/skill">
-	<textarea bind:value={textareaContent}></textarea>
+	<textarea bind:value={textareaContent} placeholder="Text that well introduce yourself."></textarea>
 	<Cta href="/start/skill" label="Next" click={saveContent} />
 	<button class="default-btn" on:click={() => summary.set(defaultSummary)}>default</button>
 </form>

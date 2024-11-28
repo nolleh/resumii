@@ -4,11 +4,11 @@
 	import { WorkHistory, workHistory, defaultWorkHistory } from '$lib/store';
 	import { getYm } from '$lib/util';
 
-	let company = 'Some Company..';
+	let company = '';
 	let title = 'Tech Leading Backend Engineer';
 	let startedAt = new Date();
 	let endedAt = new Date();
-	let textareaContent = 'Some Text..';
+	let textareaContent = '';
 	let histories: WorkHistory[] = [];
 
 	const add = (_: Event) => {
@@ -41,10 +41,10 @@
 <div id="container">
 	<form id="basic">
 		<fieldset>
-			<label> company: <input bind:value={company} /> </label>
+			<label> company: <input bind:value={company} placeholder="Some Company.." /> </label>
 			<label> started at: <input type="date" bind:value={startedAt} /> </label>
 			<label> until at: <input type="date" bind:value={endedAt} /> </label>
-			<textarea bind:value={textareaContent}></textarea>
+			<textarea bind:value={textareaContent} placeholder="Your achievemnet during works"></textarea>
 			<button id="add" on:click={add}>add</button>
 		</fieldset>
 	</form>
@@ -109,8 +109,8 @@
 		border-radius: 4px;
 		border: 1px solid #ccc;
 	}
-	
-  @media (min-width: 600px) {
+
+	@media (min-width: 600px) {
 		fieldset {
 			width: 560px;
 		}
@@ -155,6 +155,16 @@
 		font-weight: bold;
 	}
 
+	input {
+		width: 300px;
+		padding: 8px 10px;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		resize: none;
+	}
+
 	textarea {
 		width: 100%;
 		height: 150px;
@@ -187,9 +197,9 @@
 		flex-grow: 1;
 	}
 
-  .default-btn {
-    width: fit-content;
-  }
+	.default-btn {
+		width: fit-content;
+	}
 
 	.remove-button {
 		border-radius: 4px;

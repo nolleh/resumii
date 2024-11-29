@@ -1,9 +1,8 @@
 export class Level {
-  title: string = '';
-  level: number = 0;
+	title: string = '';
+	level: number = 0;
 
-  constructor(level: Partial<Level>) {
-    Object.assign(this, level);
-  }
+	constructor(level: Partial<Level>) {
+		Object.assign(this, level);
+	}
 }
-

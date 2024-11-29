@@ -27,6 +27,7 @@
 		return true;
 	};
 </script>
+
 <h2>Skill</h2>
 <p>Add your Skills, level range is 0 ~ 5</p>
 
@@ -120,7 +121,7 @@
 	}
 
 	#add {
-    margin-top: 10px;
+		margin-top: 10px;
 		border-radius: 4px;
 		background-color: #008cba; /* Match the label color */
 		color: white; /* White text */

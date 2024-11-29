@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Cta from '$lib/component/cta.svelte';
+	import Cta from '$lib/component/cta.svelte';
 </script>
 
 <header class="header">
@@ -7,8 +7,8 @@
 	<p class="header__text--bold">Generate Your Resume For Free</p>
 	<p class="header__description">
 		Put your information to be shown in resume step by step, get generated resume.
-    <br/>
-    <a href="https://github.com/nolleh/resumii">github</a>
+		<br />
+		<a href="https://github.com/nolleh/resumii">github</a>
 	</p>
 </header>
 
@@ -33,15 +33,15 @@
 	<div class="card card--blue">
 		<h2 class="card__title">Reliable</h2>
 		<p class="card__description">
-			The Resumii code is maintained as open source. you can read / contribute the code, and you
-			can see that it doesn't save your information.
-    <a href="https://github.com/nolleh/resumii">github</a>
+			The Resumii code is maintained as open source. you can read / contribute the code, and you can
+			see that it doesn't save your information.
+			<a href="https://github.com/nolleh/resumii">github</a>
 		</p>
 		<!-- <img src="images/icon-calculator.svg" alt="icon Calculator" class="card__icon" /> -->
 	</div>
 </section>
 
-<Cta href='/start/intro' label='Start' click=()/>
+<Cta href="/start/intro" label="Start" click="()" />
 
 <style lang="scss">
 	@use '$lib/style/variables' as *;
@@ -147,5 +147,4 @@
 			max-width: 311px;
 		}
 	}
-
 </style>

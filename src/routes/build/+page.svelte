@@ -9,10 +9,10 @@
 		certification,
 		accomplishment
 	} from '$lib/store';
-	import StepSection from '$lib/component/step-section.svelte';
-	import StepLevel from '$lib/component/step-level.svelte';
-	import StepWorkSection from '$lib/component/step-work-section.svelte';
-	import StepDotSection from '$lib/component/step-dot-item.svelte';
+	import StepSection from '$lib/component/build-step-section.svelte';
+	import StepLevel from '$lib/component/build-step-level.svelte';
+	import StepWorkSection from '$lib/component/build-step-work-section.svelte';
+	import StepDotSection from '$lib/component/build-step-dot-item.svelte';
 </script>
 
 <!-- <link rel="stylesheet" href="src/routes/build/build.scss" /> -->

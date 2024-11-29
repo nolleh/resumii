@@ -21,7 +21,8 @@
 <p>Describe yourself, introduction that will be shown first.</p>
 
 <form action="/start/skill">
-	<textarea bind:value={textareaContent} placeholder="Text that well introduce yourself."></textarea>
+	<textarea bind:value={textareaContent} placeholder="Text that well introduce yourself."
+	></textarea>
 	<Cta href="/start/skill" label="Next" click={saveContent} />
 	<button class="default-btn" on:click={() => summary.set(defaultSummary)}>default</button>
 </form>

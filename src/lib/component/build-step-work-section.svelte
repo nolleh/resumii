@@ -93,7 +93,6 @@
 		align-self: stretch;
 	}
 
-
 	.right {
 		padding-left: 1rem;
 		padding-bottom: 2rem;

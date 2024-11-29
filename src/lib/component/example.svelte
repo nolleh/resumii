@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let title: string;
 	export let defaultData: Record<string, any> | string;
 </script>
 
@@ -7,6 +8,9 @@
 	<p>You can also put html tag to emphasize text. John Doe's example</p>
 
 	<hr class="rounded" />
+	{#if title}
+		<h2>{@html title}</h2>
+	{/if}
 	{#if defaultData}
 		{#if 'string' === typeof defaultData}
 			{@html defaultData}

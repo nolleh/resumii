@@ -12,7 +12,7 @@
 			...summaries,
 			new Summary({
 				title: title,
-        content: content,
+				content: content
 			})
 		];
 	};
@@ -23,7 +23,7 @@
 	};
 
 	const click = (event: Event) => {
-    certification.set(summaries);
+		certification.set(summaries);
 		return true;
 	};
 </script>

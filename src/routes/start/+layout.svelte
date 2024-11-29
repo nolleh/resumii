@@ -2,7 +2,6 @@
 	import { goto } from '$app/navigation';
 	import Progress from '$lib/component/progress.svelte';
 	let { children } = $props();
-
 </script>
 
 <div class="layout">
@@ -26,7 +25,7 @@
 	}
 
 	.title-button {
-    position: relative;
+		position: relative;
 		font-size: 2em;
 		text-transform: uppercase;
 		color: #00b3b4;
@@ -48,11 +47,10 @@
 		color: #00a0a1;
 	}
 
-  .title-button:active {
-    color: #00a0a1;
-    top: 3px;
-    left: 3px;
-		text-shadow:
-			5px 5px 0px rgba(0, 0, 0, 0.1);
-  }
+	.title-button:active {
+		color: #00a0a1;
+		top: 3px;
+		left: 3px;
+		text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
+	}
 </style>

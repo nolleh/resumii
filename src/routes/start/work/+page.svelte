@@ -44,7 +44,7 @@
 			<label> company: <input bind:value={company} placeholder="Some Company.." /> </label>
 			<label> started at: <input type="date" bind:value={startedAt} /> </label>
 			<label> until at: <input type="date" bind:value={endedAt} /> </label>
-			<textarea bind:value={textareaContent} placeholder="Your achievemnet during works"></textarea>
+			<textarea bind:value={textareaContent} placeholder="Your achievement during works"></textarea>
 			<button id="add" on:click={add}>add</button>
 		</fieldset>
 	</form>
@@ -56,7 +56,7 @@
 					<div class="history-item">
 						<div class="history-details">
 							{history.company}
-							[{getYm(history.start?)} ~ {getYm(history.end)}] <br />
+							[{getYm(history.start)} ~ {getYm(history.end)}] <br />
 							{history.title}
 							<hr class="fancy-hr" />
 							<span class="description">{history.description}</span>

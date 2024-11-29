@@ -10,6 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
+		"lint:fix": "eslint --fix .",
+		"prepare": "husky",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run"
 	},
@@ -22,6 +24,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
+		"husky": "^9.1.7",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"sass-embedded": "^1.80.6",

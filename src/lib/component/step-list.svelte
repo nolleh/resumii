@@ -4,9 +4,10 @@
 	import Cta from '$lib/component/cta.svelte';
 	import { Summary } from '$lib/store';
 
+	export let stepTitle: string;
 	export let store: Writable<any>;
 	export let defaultStore: Summary[];
-	export let next: string = '';
+	export let next: string;
 
 	let title: string = '';
 	let content: string = '';
@@ -33,8 +34,8 @@
 	};
 </script>
 
-<h2>Accomplishments</h2>
-<p>Put your accomplishments. Press add button as you needed, then press next</p>
+<h2>{stepTitle}</h2>
+<p>Put your {stepTitle.toLowerCase()}. Press add button as you needed, then press next</p>
 <div id="container">
 	<form id="basic">
 		<fieldset>

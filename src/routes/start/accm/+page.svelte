@@ -3,4 +3,9 @@
 	import { accomplishment, defaultAccoms } from '$lib/store';
 </script>
 
-<StepList store={accomplishment} defaultStore={defaultAccoms} next="/build" />
+<StepList
+	stepTitle="Accomplishments"
+	store={accomplishment}
+	defaultStore={defaultAccoms}
+	next="/build"
+/>

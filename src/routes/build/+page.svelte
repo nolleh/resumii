@@ -36,9 +36,10 @@
 	</div>
 </div>
 
-<link rel="stylesheet" href="src/lib/style/build.scss"/>
-<style lang="scss">
+<link rel="stylesheet" href="src/lib/style/build.scss" />
 
+<style lang="scss">
+	@use '$style/build' as *;
 	#to {
 		display: flex;
 		flex-direction: column;

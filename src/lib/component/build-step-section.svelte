@@ -12,7 +12,7 @@
 
 <!-- <link rel="stylesheet" href="src/lib/styles/build.scss"/> -->
 <style lang="scss">
-  @use "$style/build" as *;
+	@use '$style/build' as *;
 	section {
 		margin-top: 13px;
 	}

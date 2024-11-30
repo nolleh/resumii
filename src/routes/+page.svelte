@@ -44,8 +44,8 @@
 <Cta href="/start/intro" label="Start" click="()" />
 
 <style lang="scss">
-	@use '$lib/style/variables' as *;
-	@use '$lib/style/mixins' as *;
+	@use '$style/variables' as *;
+	@use '$style/mixins' as *;
 
 	* {
 		margin: 0;

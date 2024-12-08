@@ -2,10 +2,17 @@
 	import { goto } from '$app/navigation';
 	import Progress from '$lib/component/progress.svelte';
 	let { children } = $props();
+
+	async function load(e: any) {
+		const file = e.target.files[0];
+		if (null == file) return;
+
+		const read = await file.text();
+	}
 </script>
 
 <div class="layout">
-	<button class="title-button" on:click={() => goto('/')}>Resumii</button>
+	<button class="title-button" onclick={() => goto('/')}>Resumii</button>
 	<Progress />
 
 	<p>
@@ -15,6 +22,9 @@
 		Press 'Default' button in each step to set example data for that step. (If you want to erase that
 		step's data)
 	</p>
+	<label>
+		You can load from file that saved before, in any step. <br/> <input type="file" accept=".json" placeholder="saved.json" onchange={load} />
+	</label>
 	{@render children()}
 </div>
 

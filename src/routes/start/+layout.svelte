@@ -23,7 +23,8 @@
 		step's data)
 	</p>
 	<label>
-		You can load from file that saved before, in any step. <br/> <input type="file" accept=".json" placeholder="saved.json" onchange={load} />
+		You can load from file that saved before, in any step. <br />
+		<input type="file" accept=".json" placeholder="saved.json" onchange={load} />
 	</label>
 	{@render children()}
 </div>

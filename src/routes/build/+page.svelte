@@ -35,13 +35,13 @@
 		user.set(body.user);
 		summary.set(body.summary);
 	}
-	
-  async function saveResume(event: Event) {
+
+	async function saveResume(event: Event) {
 		event.preventDefault();
 
 		const body = new Body({
 			user: get<User>(user),
-			summary: get<Summary>(summary),
+			summary: get<Summary>(summary)
 		});
 
 		const response = await fetch('/build/save', {
@@ -58,7 +58,8 @@
 
 			// Extract filename from Content-Disposition header
 			const contentDisposition = response.headers.get('Content-Disposition');
-			const filename = contentDisposition?.split('filename=')[1]?.replace(/"/g, '') || 'download.json';
+			const filename =
+				contentDisposition?.split('filename=')[1]?.replace(/"/g, '') || 'download.json';
 
 			const a = document.createElement('a');
 			a.href = url;

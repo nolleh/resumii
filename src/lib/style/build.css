@@ -69,7 +69,7 @@ h1 {
 @media print {
 	.left {
 		width: 50% !important;
-		background-color: #135 !important; 
+		background-color: #135 !important;
 	}
 
 	.right {

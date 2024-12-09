@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { get } from 'svelte/store';
 	import {
-		User,
 		user,
-		Summary,
 		summary,
 		workHistory,
 		skill,
@@ -18,40 +15,27 @@
 	import StepWorkSection from '$lib/component/build-step-work-section.svelte';
 	import StepDotSection from '$lib/component/build-step-dot-item.svelte';
 	import '$lib/style/build.scss';
+	import { SaveBody } from '$lib/dto';
 
 	onMount(() => {
-		document.body.classList.add('build-page');
+		const buildClass = 'build-page';
+		document.body.classList.add(buildClass);
 		return () => {
-			document.body.classList.remove('build-page');
+			document.body.classList.remove(buildClass);
 		};
 	});
-
-	class Body {
-		user: User | null = null;
-		summary: Summary | null = null;
-
-		constructor(payload: Partial<Body>) {
-			Object.assign(this, payload);
-		}
-	}
 
 	async function load(e: any) {
 		const file = e.target.files[0];
 		if (null == file) return;
 
 		const text = await file.text();
-		const body = Object.assign(new Body({}), JSON.parse(text));
-		user.set(body.user);
-		summary.set(body.summary);
+		SaveBody.restoreFromSavedTxt(text);
 	}
 
 	async function saveResume(event: Event) {
 		event.preventDefault();
-
-		const body = new Body({
-			user: get<User>(user),
-			summary: get<Summary>(summary)
-		});
+		const body = SaveBody.createFromStore();
 
 		const response = await fetch('/build/save', {
 			method: 'POST',

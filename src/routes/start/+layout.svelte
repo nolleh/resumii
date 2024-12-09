@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Progress from '$lib/component/progress.svelte';
+	import { SaveBody } from '$lib/dto';
+
 	let { children } = $props();
 
 	async function load(e: any) {
 		const file = e.target.files[0];
 		if (null == file) return;
 
-		const read = await file.text();
+		const text = await file.text();
+		SaveBody.restoreFromSavedTxt(text);
 	}
 </script>
 

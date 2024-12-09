@@ -56,7 +56,7 @@ h1 {
 	align-self: stretch;
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
 	.left {
 		width: 35%;
 	}
@@ -69,15 +69,7 @@ h1 {
 @media print {
 	.left {
 		width: 50% !important;
-		background-color: #135 !important;
-	}
-
-	.right {
-		width: 100%;
-	}
-
-	.company-mark b {
-		display: inline-block;
+		background: #135 !important;
 	}
 }
 

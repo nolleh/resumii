@@ -16,6 +16,7 @@
 	import StepLevel from '$lib/component/build-step-level.svelte';
 	import StepWorkSection from '$lib/component/build-step-work-section.svelte';
 	import StepDotSection from '$lib/component/build-step-dot-item.svelte';
+	import '$lib/style/build.scss';
 
 	class Body {
 		user: User | null = null;
@@ -111,10 +112,8 @@
 		<input type="file" accept=".json" onchange={load} />
 	</label>
 </section>
-<link rel="stylesheet" href="src/lib/style/build.css" />
 
 <style lang="scss">
-	@use '$style/build' as *;
 	#to {
 		display: flex;
 		flex-direction: column;

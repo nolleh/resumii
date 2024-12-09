@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
 	import {
 		User,
@@ -18,6 +19,13 @@
 	import StepDotSection from '$lib/component/build-step-dot-item.svelte';
 	import '$lib/style/build.scss';
 
+	onMount(() => {
+		document.body.classList.add('build-page');
+		return () => {
+			document.body.classList.remove('build-page');
+		};
+	});
+
 	class Body {
 		user: User | null = null;
 		summary: Summary | null = null;
@@ -26,7 +34,7 @@
 			Object.assign(this, payload);
 		}
 	}
-	console.log(get<Summary>(summary));
+
 	async function load(e: any) {
 		const file = e.target.files[0];
 		if (null == file) return;
@@ -100,8 +108,8 @@
 
 <section class="hide-in-resume">
 	<p>
-		Press Ctrl + P to save your resume in PDF format. only resume part will be saved. (From this
-		message, not saved). <br />
+		Press Ctrl (command) + P to save your resume in PDF format. only resume part will be saved.
+		(From this message, not saved). <br />
 		And, you can also save this resume by press below button, and then load whenever you need.
 	</p>
 	<form onsubmit={saveResume}>

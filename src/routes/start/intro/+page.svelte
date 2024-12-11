@@ -28,10 +28,10 @@
 	<fieldset>
 		<label>name: <input bind:value={name} /></label>
 		<label>professional title: <input bind:value={comment} /></label>
-		<label>email: <input bind:value={email} /></label>
+		<label>email: <input type="email" bind:value={email} /></label>
 		<label>city: <input bind:value={city} /></label>
 		<div>
-			<Cta href="/start/summary" label="Next" click={saveContent} />
+			<Cta label="Next" click={saveContent} />
 			<button class="default-btn" on:click={() => user.set(defaultUser)}>default</button>
 		</div>
 	</fieldset>
@@ -50,10 +50,6 @@
 		/* margin: 0 auto; */
 		border-radius: 4px;
 		border: 1px solid #ccc;
-	}
-
-	#basic p {
-		margin-top: 20px;
 	}
 
 	label {

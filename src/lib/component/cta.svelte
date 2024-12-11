@@ -1,11 +1,18 @@
 <script lang="ts">
-	export let href: string;
+	import StepList from './step-list.svelte';
+	export let href: string | null = null;
 	export let label: string;
 	export let click;
 </script>
 
 <div class="cta-container">
-	<a {href} class="cta" on:click={click}><span>{label}</span></a>
+	{#if href}
+		<a {href} class="cta" on:click={click}><span>{label}</span></a>
+	{:else}
+		<button type="submit" class="cta" on:click={click}>
+			<span>{label}</span>
+		</button>
+	{/if}
 </div>
 
 <style lang="scss">
@@ -29,6 +36,7 @@
 		margin: 5px;
 		border: 1px solid #008cba;
 		box-shadow: 0 15px 40px -11px rgba(131, 166, 210, 0.5);
+		background: none;
 	}
 
 	.cta span {

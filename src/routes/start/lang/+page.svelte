@@ -22,7 +22,7 @@
 		languages = languages;
 	};
 
-	const click = (event: Event) => {
+	const click = (_: Event) => {
 		language.set(languages);
 		return true;
 	};

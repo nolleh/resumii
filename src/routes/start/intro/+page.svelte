@@ -1,12 +1,19 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import Example from '$lib/component/example.svelte';
-	import { user, User, defaultUser } from '$lib/store';
+	import { user, User, defaultUser, restored } from '$lib/store';
 
 	let name: string,
 		comment: string,
 		email: string,
 		city: string = '';
+
+	$: if ($user !== defaultUser || $restored) {
+		name = $user.name;
+		comment = $user.professionalTitle;
+		email = $user.email;
+		city = $user.city;
+	}
 
 	function saveContent() {
 		user.set(

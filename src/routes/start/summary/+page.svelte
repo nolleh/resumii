@@ -1,12 +1,17 @@
 <script lang="ts">
 	import Cta from '$lib/component/cta.svelte';
 	import Example from '$lib/component/example.svelte';
-	import { Summary, summary, defaultSummary } from '$lib/store';
+	import { Summary, summary, defaultSummary, restored } from '$lib/store';
 
 	let title = 'Software Developer';
 	let textareaContent = '';
 
-	function saveContent(event: Event) {
+	$: if ($summary !== defaultSummary || $restored) {
+		title = $summary.title;
+		textareaContent = $summary.content;
+	}
+
+	function saveContent(_: Event) {
 		summary.set(
 			new Summary({
 				title: title,

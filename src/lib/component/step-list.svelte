@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { type Writable } from 'svelte/store';
 	import Cta from '$lib/component/cta.svelte';
-	import { Summary } from '$lib/store';
+	import { Summary, restored } from '$lib/store';
 
 	export let stepTitle: string;
 	export let store: Writable<any>;
@@ -12,6 +12,10 @@
 	let title: string = '';
 	let content: string = '';
 	let summaries: Summary[] = [];
+
+	$: if ($store !== defaultStore || $restored) {
+		summaries = $store;
+	}
 
 	const add = (_: Event) => {
 		summaries = [

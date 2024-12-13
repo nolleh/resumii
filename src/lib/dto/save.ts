@@ -10,7 +10,8 @@ import {
 	language,
 	education,
 	certification,
-	accomplishment
+	accomplishment,
+	restored
 } from '$lib/store';
 import { get } from 'svelte/store';
 
@@ -62,6 +63,7 @@ export class SaveBody {
 		education.set(body.education);
 		certification.set(body.certification);
 		accomplishment.set(body.accomplishment);
+		restored.set(true);
 	}
 
 	static createFromStore(): SaveBody {

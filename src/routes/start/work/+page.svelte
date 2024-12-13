@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
-	import { WorkHistory, workHistory, defaultWorkHistory } from '$lib/store';
+	import { WorkHistory, workHistory, defaultWorkHistory, restored } from '$lib/store';
 	import { getYm } from '$lib/util';
 
 	let company = '';
@@ -10,6 +10,10 @@
 	let endedAt = new Date();
 	let textareaContent = '';
 	let histories: WorkHistory[] = [];
+
+	$: if ($workHistory !== defaultWorkHistory || $restored) {
+		histories = $workHistory;
+	}
 
 	const add = (_: Event) => {
 		histories = [

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import StepList from './step-list.svelte';
 	export let href: string | null = null;
 	export let label: string;
 	export let click;

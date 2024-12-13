@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
-	import { Level, skill, defaultSkills } from '$lib/store';
+	import { Level, skill, defaultSkills, restored } from '$lib/store';
 
 	let title: string = '';
 	let level: number | null = null;
 	let skills: Level[] = [];
+
+	$: if ($skill !== defaultSkills || $restored) {
+		skills = $skill;
+	}
 
 	const add = (_: Event) => {
 		skills = [

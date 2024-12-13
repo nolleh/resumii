@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import Cta from '$lib/component/cta.svelte';
-	import { Level, language, defaultLangs } from '$lib/store';
+	import { Level, language, defaultLangs, restored } from '$lib/store';
 
 	let title: string = '';
 	let level: number | null = null;
 	let languages: Level[] = [];
+
+	$: if ($language !== defaultLangs || $restored) {
+		languages = $language;
+	}
 
 	const add = (_: Event) => {
 		languages = [

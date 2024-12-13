@@ -27,3 +27,5 @@ export const language: Writable<Level[]> = writable(defaultLangs);
 export const education: Writable<Summary[]> = writable(defaultEdus);
 export const certification: Writable<Summary[]> = writable(defaultCerts);
 export const accomplishment: Writable<Summary[]> = writable(defaultAccoms);
+
+export const restored: Writable<boolean> = writable(false);

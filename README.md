@@ -3,7 +3,7 @@
 Generate Your Resume For Free
 Put your information to be shown in resume step by step, get generated resume.
 
-We don't save your information in server, but you can load/save your local saved resume information from already written in RESUMII.
+We don't save your information in server, but you can load/save your local saved resume information from file already written in RESUMII.
 
 > [!Note]
 > Try Here  

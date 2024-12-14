@@ -1,5 +1,7 @@
 # Resumii
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Generate Your Resume For Free
 Put your information to be shown in resume step by step, get generated resume.
 

@@ -26,12 +26,16 @@
 </div>
 
 <style lang="scss">
+	@use '$style/mixins' as *;
+	@use '$style/variables' as *;
+
 	div {
 		margin: 60px;
 		border: 1px solid gray;
 		padding: 8px;
 	}
-	@media (max-width: 1000px) {
+
+	@include media-query($md) {
 		div {
 			margin: 10px;
 		}

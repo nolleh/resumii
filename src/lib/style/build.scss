@@ -1,3 +1,6 @@
+@use '$style/mixins' as *;
+@use '$style/variables' as *;
+
 body.build-page {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -29,7 +32,7 @@ h1 {
 	line-height: 1.1;
 }
 
-@media (max-width: 1000px) {
+@include media-query($md) {
 	h1 {
 		font-size: 2.5em;
 	}
@@ -52,7 +55,7 @@ h1 {
 	align-self: stretch;
 }
 
-@media only screen and (max-width: 1000px) {
+@include media-query($md) {
 	.left {
 		width: 35%;
 	}

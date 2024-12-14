@@ -78,18 +78,22 @@
 	}}>default</button
 >
 
-<style>
+<style lang="scss">
+	@use '$style/variables' as *;
+	@use '$style/mixins' as *;
+
 	#container {
 		display: flex;
 		gap: 20px;
 		flex-wrap: wrap;
 	}
 
-	@media (max-width: 2000px) {
+	@include media-query($md) {
 		#container {
 			flex-direction: column;
 		}
 	}
+
 	fieldset {
 		max-width: 560px;
 		border-radius: 4px;

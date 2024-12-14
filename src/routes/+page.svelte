@@ -59,6 +59,7 @@
 		@include flex(column, 0, center);
 		height: 100vh;
 	}
+
 	.header {
 		max-width: 540px;
 		margin-top: 80px;

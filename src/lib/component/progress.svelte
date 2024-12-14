@@ -53,6 +53,9 @@
 </div>
 
 <style lang="scss">
+	@use '$style/mixins' as *;
+	@use '$style/variables' as *;
+
 	$circleSize: 50px;
 	$circleBorderWidth: 5px;
 	$lineOffset: 10px;
@@ -68,7 +71,8 @@
 		box-sizing: border-box; /* Include padding in the element's total width and height */
 	}
 
-	@media (max-width: 600px) {
+	/** 600px? **/
+	@include media-query($md) {
 		$circleSize: 30px;
 		$circleBorderWidth: 3px;
 		$lineOffset: 7px;

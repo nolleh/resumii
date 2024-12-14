@@ -64,7 +64,7 @@
 
 			console.log('Resume saved successfully');
 		} else {
-			console.error('Failed to save resume');
+			alert('Failed to save resume');
 		}
 	}
 </script>

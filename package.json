@@ -25,6 +25,7 @@
 		"eslint-plugin-svelte": "^2.36.0",
 		"globals": "^15.0.0",
 		"husky": "^9.1.7",
+		"lint-staged": "^15.2.11",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"sass-embedded": "^1.80.6",
@@ -34,5 +35,11 @@
 		"typescript-eslint": "^8.0.0",
 		"vite": "^5.0.3",
 		"vitest": "^2.0.4"
+	},
+	"lint-staged": {
+		"*.{js, ts, svelte}": [
+			"pnpm lint:fix"
+		],
+		"*": "pnpm format"
 	}
 }

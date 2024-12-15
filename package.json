@@ -37,7 +37,7 @@
 		"vitest": "^2.0.4"
 	},
 	"lint-staged": {
-		"*.{js, ts, svelte}": [
+		"*.{js, ts, svelte, html, css, scss}": [
 			"pnpm lint:fix"
 		],
 		"*": "pnpm format"

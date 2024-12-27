@@ -1,5 +1,5 @@
-@use '$style/mixins' as *;
-@use '$style/variables' as *;
+@use '../../style/mixins' as *;
+@use '../../style/variables' as *;
 
 body.build-page {
 	font-family: 'Open Sans', sans-serif;
@@ -53,6 +53,9 @@ h1 {
 }
 
 @include media-query($md) {
+  .app {
+    flex-direction: column;
+  }
 	.left {
 		width: 30%;
 	}

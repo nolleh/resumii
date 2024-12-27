@@ -1,5 +1,5 @@
-@use '$style/mixins' as *;
-@use '$style/variables' as *;
+@use '../../style/mixins' as *;
+@use '../../style/variables' as *;
 
 body.build-page {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

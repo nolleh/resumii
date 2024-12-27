@@ -14,5 +14,9 @@ export default defineConfig({
 				// includePaths: ['src/**/*', 'src/lib/styles/**/*']
 			}
 		}
+	},
+	build: {
+    outDir: 'dist',
+		assetsDir: 'assets'
 	}
 });

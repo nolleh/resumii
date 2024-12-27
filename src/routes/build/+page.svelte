@@ -16,31 +16,31 @@
 	import StepDotSection from '$lib/component/build-step-dot-item.svelte';
 	import { SaveBody } from '$lib/dto';
 
-	const themes = [
+	interface Theme {
+		name: string;
+		path: string;
+		thumbnail: string;
+	}
+
+	const themes: Theme[] = [
 		{
 			name: 'Default',
-			path: () => {
-				import('$theme/default/build.scss');
-			},
+			path: new URL('../../lib/theme/default/build.css', import.meta.url).href,
 			thumbnail: 'default.png'
 		},
 		{
 			name: 'Resume',
-			path: () => {
-				import('$theme/resume/build.scss');
-			},
+			path: new URL('../../lib/theme/resume/build.css', import.meta.url).href,
 			thumbnail: 'resume.png'
 		},
 		{
 			name: 'Simple Doc',
-			path: () => {
-				import('$theme/simple-doc/build.scss');
-			},
+			path: new URL('../../lib/theme/simple-doc/build.css', import.meta.url).href,
 			thumbnail: 'simple-doc.png'
 		}
 	];
 
-	themes[0].path();
+	let currentTheme = themes[0];
 
 	onMount(() => {
 		const buildClass = 'build-page';
@@ -92,10 +92,15 @@
 		}
 	}
 
-	function selectTheme(themePath: () => void) {
-		currentTheme = themePath();
+	function selectTheme(theme: Theme) {
+		currentTheme = theme;
+		// currentTheme.vite();
 	}
 </script>
+
+<svelte:head>
+	<link rel="stylesheet" href={currentTheme.path} />
+</svelte:head>
 
 <div class="content">
 	<div class="left"></div>
@@ -133,7 +138,7 @@
 	<h3>Theme</h3>
 	<div class="theme-selector">
 		{#each themes as theme}
-			<div class="theme-thumbnail" onclick={() => selectTheme(theme.path)}>
+			<div class="theme-thumbnail" onclick={() => selectTheme(theme)}>
 				<img src={theme.thumbnail} alt={theme.name} />
 				<p>{theme.name}</p>
 			</div>

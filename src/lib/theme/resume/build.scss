@@ -53,9 +53,9 @@ h1 {
 }
 
 @include media-query($md) {
-  .app {
-    flex-direction: column;
-  }
+	.app {
+		flex-direction: column;
+	}
 	.left {
 		width: 30%;
 	}

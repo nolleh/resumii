@@ -1,6 +1,6 @@
 {
 	"name": "resumii",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -41,7 +41,7 @@
 	},
 	"lint-staged": {
 		"*.{js, ts, svelte, html, css, scss}": [
-			"pnpm lint:fix"
+			"pnpm format"
 		],
 		"*": "pnpm format"
 	}

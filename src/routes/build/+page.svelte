@@ -14,8 +14,33 @@
 	import StepLevel from '$lib/component/build-step-level.svelte';
 	import StepWorkSection from '$lib/component/build-step-work-section.svelte';
 	import StepDotSection from '$lib/component/build-step-dot-item.svelte';
-	import '$lib/style/build.scss';
 	import { SaveBody } from '$lib/dto';
+
+	const themes = [
+		{
+			name: 'Default',
+			path: () => {
+				import('$theme/default/build.scss');
+			},
+			thumbnail: 'default.png'
+		},
+		{
+			name: 'Resume',
+			path: () => {
+				import('$theme/resume/build.scss');
+			},
+			thumbnail: 'resume.png'
+		},
+		{
+			name: 'Simple Doc',
+			path: () => {
+				import('$theme/simple-doc/build.scss');
+			},
+			thumbnail: 'simple-doc.png'
+		}
+	];
+
+	themes[0].path();
 
 	onMount(() => {
 		const buildClass = 'build-page';
@@ -49,7 +74,6 @@
 			const blob = await response.blob();
 			const url = URL.createObjectURL(blob);
 
-			// Extract filename from Content-Disposition header
 			const contentDisposition = response.headers.get('Content-Disposition');
 			const filename =
 				contentDisposition?.split('filename=')[1]?.replace(/"/g, '') || 'download.json';
@@ -67,6 +91,10 @@
 			alert('Failed to save resume');
 		}
 	}
+
+	function selectTheme(themePath: () => void) {
+		currentTheme = themePath();
+	}
 </script>
 
 <div class="content">
@@ -75,9 +103,7 @@
 		<h1>{@html $user.name}</h1>
 		<h2>{@html $user.professionalTitle}</h2>
 		<div id="to">
-			<!-- <img src="place"/>  -->
 			{@html $user.city} <br />
-			<!-- <img src="mail"/>  -->
 			{@html $user.email}
 		</div>
 		<StepSection title={$summary.title} content={$summary.content}></StepSection>
@@ -99,10 +125,20 @@
 	<form onsubmit={saveResume}>
 		<button type="submit"> Save Current Resume </button>
 	</form>
-	<label
-		>Load Saved Resume
+	<label>
+		Load Saved Resume
 		<input type="file" accept=".json" onchange={load} />
 	</label>
+	<hr />
+	<h3>Theme</h3>
+	<div class="theme-selector">
+		{#each themes as theme}
+			<div class="theme-thumbnail" onclick={() => selectTheme(theme.path)}>
+				<img src={theme.thumbnail} alt={theme.name} />
+				<p>{theme.name}</p>
+			</div>
+		{/each}
+	</div>
 </section>
 
 <style lang="scss">
@@ -119,6 +155,29 @@
 	label {
 		margin-top: 10px;
 		display: block;
+	}
+
+	.theme-selector {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 20px;
+	}
+
+	.theme-thumbnail {
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.theme-thumbnail img {
+		width: 100px;
+		height: 100px;
+		border: 2px solid #ccc;
+		border-radius: 8px;
+		transition: border-color 0.3s;
+	}
+
+	.theme-thumbnail:hover img {
+		border-color: #007bff;
 	}
 
 	@media print {

@@ -1,0 +1,127 @@
+@use '$style/mixins' as *;
+@use '$style/variables' as *;
+
+body.build-page {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+	background-color: #f8f9fa;
+	color: #212529;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+h1 {
+	font-size: 2.5em;
+	line-height: 1.2;
+	color: #495057;
+	margin-bottom: 1rem;
+}
+
+@include media-query($md) {
+	h1 {
+		font-size: 2em;
+	}
+}
+
+.app {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+}
+
+.content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 1rem;
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+	width: 25%;
+	background: #343a40;
+	color: #ffffff;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@include media-query($md) {
+	.left {
+		width: 30%;
+	}
+}
+
+@media print {
+	.left {
+		width: 50% !important;
+		background: #343a40 !important;
+	}
+}
+
+.right {
+	flex: 1;
+	padding: 2rem;
+	background-color: #e9ecef;
+}
+
+.skill-item {
+	display: flex;
+	padding: 10px;
+	background-color: #ffffff;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding-right: 1rem;
+	align-items: flex-end;
+}
+
+.dot {
+	height: 12px;
+	width: 12px;
+	background-color: #6c757d;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.company {
+	padding: 20px 0;
+}
+
+.company-mark {
+	position: absolute;
+	left: 20px;
+	color: #6c757d;
+	display: none;
+}
+
+.company .title {
+	font-weight: bold;
+}
+
+.company .title,
+.desc {
+	margin: 10px;
+}
+
+.fluent {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: #007bff;
+	margin-right: 5px;
+}

@@ -1,0 +1,120 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+body.build-page {
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.2;
+  color: #222222;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 0.5rem;
+}
+
+@include media-query($md) {
+  h1 {
+    font-size: 1.8em;
+  }
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.left {
+  width: 100%;
+  background: #f0f0f0;
+  color: #333333;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.right {
+  flex: 1;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.skill-item {
+  display: flex;
+  padding: 8px;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-right: 1rem;
+  align-items: flex-end;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #555555;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.company {
+  padding: 10px 0;
+}
+
+.company-mark {
+  position: absolute;
+  left: 20px;
+  color: #777777;
+  display: none;
+}
+
+.company .title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.company .title,
+.desc {
+  margin: 8px;
+}
+
+.fluent {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #007bff;
+  margin-right: 4px;
+}

@@ -2,21 +2,21 @@ import { defineConfig } from 'vitest/config';
 import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
-	plugins: [sveltekit()],
+  plugins: [sveltekit()],
 
-	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
-	},
-	css: {
-		preprocessorOptions: {
-			scss: {
-				api: 'modern-compiler' // or "modern"
-				// includePaths: ['src/**/*', 'src/lib/styles/**/*']
-			}
-		}
-	},
-	build: {
-		outDir: 'dist',
-		assetsDir: 'assets'
-	}
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}']
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler' // or "modern"
+        // includePaths: ['src/**/*', 'src/lib/styles/**/*']
+      }
+    }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 });

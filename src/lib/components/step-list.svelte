@@ -1,56 +1,61 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { type Writable } from 'svelte/store';
   import Cta from '$lib/components/cta.svelte';
-  import { Level, language, defaultLangs, restored } from '$lib/store';
+  import { Summary, restored } from '$lib/store';
+
+  export let stepTitle: string;
+  export let store: Writable<any>;
+  export let defaultStore: Summary[];
+  export let next: string;
 
   let title: string = '';
-  let level: number | null = null;
-  let languages: Level[] = [];
+  let content: string = '';
+  let summaries: Summary[] = [];
 
-  $: if ($language !== defaultLangs || $restored) {
-    languages = $language;
+  $: if ($store !== defaultStore || $restored) {
+    summaries = $store;
   }
 
   const add = (_: Event) => {
-    languages = [
-      ...languages,
-      new Level({
+    summaries = [
+      ...summaries,
+      new Summary({
         title: title,
-        level: level ? level : 0
+        content: content
       })
     ];
   };
 
   const remove = (_: Event, idx: number) => {
-    languages.splice(idx, 1);
-    languages = languages;
+    summaries.splice(idx, 1);
+    summaries = summaries;
   };
 
   const click = (_: Event) => {
-    language.set(languages);
+    store.set(summaries);
     return true;
   };
 </script>
 
-<h2>Language</h2>
-<p>Add your language, level range is 0~5</p>
-
+<h2>{stepTitle}</h2>
+<p>Put your {stepTitle.toLowerCase()}. Press add button as you needed, then press next</p>
 <div id="container">
   <form id="basic">
     <fieldset>
       <label> title <input bind:value={title} /> </label>
-      <label> level <input bind:value={level} /> </label>
+      <label> content <input bind:value={content} /> </label>
       <button id="add" on:click={add}>add</button>
     </fieldset>
   </form>
   <div id="list">
     <lu>
-      {#each languages as lang, idx}
+      {#each summaries as summary, idx}
         <li>
           <div class="item">
-            {lang.title}
+            {summary.title}
             <div class="details">
-              {lang.level}
+              {summary.content}
             </div>
             <button
               class="remove-button"
@@ -64,12 +69,12 @@
     </lu>
   </div>
 </div>
-<Cta href="/start/edu" label="Next" {click} />
+<Cta href={next} label="Next" {click} />
 <button
   class="default-btn"
   on:click={() => {
-    language.set(defaultLangs);
-    goto('/start/edu');
+    store.set(defaultStore);
+    goto(next);
   }}>default</button
 >
 
@@ -88,11 +93,13 @@
       flex-direction: column;
     }
   }
+
   fieldset {
     max-width: 560px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }
+
   @media (min-width: 600px) {
     fieldset {
       width: 560px;

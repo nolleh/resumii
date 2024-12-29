@@ -94,7 +94,7 @@
 
   function selectTheme(theme: Theme) {
     currentTheme = theme;
-    // currentTheme.vite();
+    console.log(theme.path);
   }
 </script>
 

@@ -39,13 +39,18 @@ h1 {
 }
 
 .app {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
 .content {
   display: flex;
-  overflow-y: auto;
+  flex: 1.5 0 0;
+  /* overflow-y: auto; */
+  /* flex-direction: column; */
 }
 
 .left {
@@ -56,6 +61,10 @@ h1 {
 }
 
 @include media-query($md) {
+  .app {
+    flex-direction: column;
+  }
+
   .left {
     width: 35%;
   }

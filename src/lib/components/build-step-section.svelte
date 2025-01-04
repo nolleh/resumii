@@ -3,7 +3,7 @@
   export let content: string;
 </script>
 
-<section>
+<section class="sc-title-content">
   {#if title}
     <h3>{title}</h3>
   {/if}

@@ -35,7 +35,7 @@ h1 {
 
 .content {
   display: flex;
-  flex: 1;
+  flex: 1.5 0 0;
   flex-direction: column;
   padding: 1rem;
   background-color: #ffffff;
@@ -64,7 +64,7 @@ h1 {
 @media print {
   .left {
     width: 50% !important;
-    background: #343a40 !important;
+    /* background: #343a40 !important; */
   }
 }
 

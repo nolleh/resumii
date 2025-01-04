@@ -37,6 +37,16 @@
       name: 'Simple Doc',
       path: new URL('../../lib/themes/simple-doc/build.css', import.meta.url).href,
       thumbnail: 'simple-doc.png'
+    },
+    {
+      name: 'Pastel Book',
+      path: new URL('../../lib/themes/pastel-book/build.css', import.meta.url).href,
+      thumbnail: 'pastel-book.png'
+    },
+    {
+      name: 'Cyber',
+      path: new URL('../../lib/themes/cyber/build.css', import.meta.url).href,
+      thumbnail: 'cyber.png'
     }
   ];
 
@@ -94,7 +104,6 @@
 
   function selectTheme(theme: Theme) {
     currentTheme = theme;
-    console.log(theme.path);
   }
 </script>
 
@@ -105,8 +114,10 @@
 <div class="content">
   <div class="left"></div>
   <div class="right">
-    <h1>{@html $user.name}</h1>
-    <h2>{@html $user.professionalTitle}</h2>
+    <div class="name-title">
+      <h1 class="name">{@html $user.name}</h1>
+      <h2 class="professional-title">{@html $user.professionalTitle}</h2>
+    </div>
     <div id="to">
       {@html $user.city} <br />
       {@html $user.email}
@@ -183,6 +194,10 @@
 
   .theme-thumbnail:hover img {
     border-color: #007bff;
+  }
+
+  .hide-in-resume {
+    flex: 1 1 0;
   }
 
   @media print {

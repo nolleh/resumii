@@ -21,7 +21,7 @@
   }
 </script>
 
-<section>
+<section class="sc-history">
   {#if title}
     <h3>{title}</h3>
   {/if}

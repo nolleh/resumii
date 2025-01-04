@@ -1,0 +1,194 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+body.build-page {
+  font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  /* background-color: #f0f8f5; */
+  /* lighter pastel green background */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.3;
+  color: #333;
+}
+
+.name-title {
+  padding: 10px;
+  background-color: #c8e6c9;
+  /* pastel green */
+  border: 1px solid #b2d8c6;
+  /* pastel green border */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@include media-query($md) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #e6f4ea;
+  /* pastel green background */
+}
+
+.content {
+  display: flex;
+  flex: 1.5 0 0;
+  flex-direction: row;
+  /* background-color: #ffffff; */
+  border: 1px solid #b2d8c6;
+  /* pastel green border */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* padding-left: 2rem; */
+  /* padding-bottom: 3rem; */
+  background-color: #c3d8c6;
+  /* pastel green */
+  /* border: 1px solid #b2d8c6; */
+  /* pastel green border */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.left {
+  width: 5%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #d4fae8;
+  border-radius: 4px;
+  box-shadow:
+    3px 6px 10px #444,
+    inset 2px 2px 10px #aaa;
+}
+
+.right {
+  padding: 2rem;
+}
+
+/* history is level container */
+.sc-history {
+  /* float: left; */
+  background: #ffffff;
+  overflow-y: auto;
+  align-self: stretch;
+  padding: 1rem;
+  border: 1px solid #b2d8c6;
+  /* pastel green border */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  /* Add margin to prevent overlap */
+}
+
+@include media-query($md) {
+  .app {
+    flex-direction: column;
+  }
+
+  .company-mark b {
+    display: none;
+  }
+}
+
+@media print {
+}
+
+/* used for level indication (skill/lang) */
+.skill-item {
+  display: flex;
+  padding: 10px;
+  background-color: #c8e6c9;
+  /* pastel green */
+  border: 1px solid #b2d8c6;
+  /* pastel green border */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score {
+  flex-direction: column;
+  display: flex;
+  flex: 1 1 auto;
+  padding-right: 1rem;
+  align-items: flex-end;
+}
+
+// not fluent for indicating empty dot
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+// fluent for indicating filled dot
+.fluent {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #369;
+  margin-right: 5px;
+}
+
+/* start of used in work history {{ */
+.company {
+  padding: 20px 0px;
+  color: #4a4a4a;
+  /* dark text for contrast */
+  border-bottom: 1px solid #b2d8c6;
+  /* pastel green border */
+  margin-bottom: 1rem;
+}
+
+.company-mark {
+  position: absolute;
+  left: 15px;
+  color: #aaa;
+  display: none;
+}
+
+.company .title {
+  font-weight: bold;
+  color: #555;
+}
+
+.company .title,
+.desc {
+  margin: 15px;
+}
+
+/* }} end of used in work history */

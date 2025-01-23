@@ -175,6 +175,7 @@
 
   .theme-selector {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 20px;
   }

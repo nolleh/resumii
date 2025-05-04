@@ -22,14 +22,18 @@
   }
 </script>
 
-<h2>Summary</h2>
-<p>Describe yourself, introduction that will be shown first.</p>
+<h2>Professional Summary</h2>
+<p>
+  Write a compelling introduction that highlights your key qualifications and career objectives.
+</p>
 
 <form action="/start/skill">
-  <textarea bind:value={textareaContent} placeholder="Text that well introduce yourself."
+  <textarea
+    bind:value={textareaContent}
+    placeholder="Write a concise summary of your professional background, skills, and career goals."
   ></textarea>
   <Cta label="Next" click={saveContent} />
-  <button class="default-btn" on:click={() => summary.set(defaultSummary)}>default</button>
+  <button class="default-btn" on:click={() => summary.set(defaultSummary)}>Reset to Default</button>
 </form>
 
 <Example title={defaultSummary.title} defaultData={defaultSummary.content} />

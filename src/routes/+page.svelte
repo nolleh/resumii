@@ -6,36 +6,41 @@
   <p class="header__text--thin">Resumii</p>
   <p class="header__text--bold">Generate Your Resume For Free</p>
   <p class="header__description">
-    Put your information to be shown in resume step by step, get generated resume.
+    Create your professional resume step by step with our easy-to-use tool.
     <br />
-    <a href="https://github.com/nolleh/resumii">github</a>
+    <a href="https://github.com/nolleh/resumii">View on GitHub</a>
   </p>
 </header>
 
 <section class="cards">
   <div class="card card--aqua">
-    <h2 class="card__title">No Signup</h2>
-    <p class="card__description">No need to signup, login. We don't save your information.</p>
+    <h2 class="card__title">No Signup Required</h2>
+    <p class="card__description">
+      Start creating your resume instantly. Your information stays private and is never saved on our
+      servers.
+    </p>
     <!-- <img src="images/icon-supervisor.svg" alt="icon supervisor" class="card__icon" /> -->
   </div>
   <div class="double-card">
     <div class="card card--red">
-      <h2 class="card__title">For Free</h2>
-      <p class="card__description">Resumii is provided for free.</p>
+      <h2 class="card__title">Completely Free</h2>
+      <p class="card__description">Create, edit, and download your resume at no cost.</p>
       <!-- <img src="images/icon-team-builder.svg" alt="icon team-builder" class="card__icon" /> -->
     </div>
     <div class="card card--orange">
-      <h2 class="card__title">Blazing Easy</h2>
-      <p class="card__description">Follow just few steps to make it.</p>
+      <h2 class="card__title">Simple & Fast</h2>
+      <p class="card__description">
+        Follow our step-by-step guide to create your resume in minutes.
+      </p>
       <!-- <img src="images/icon-karma.svg" alt="icon karma" class="card__icon" /> -->
     </div>
   </div>
   <div class="card card--blue">
-    <h2 class="card__title">Reliable</h2>
+    <h2 class="card__title">Open Source</h2>
     <p class="card__description">
-      The Resumii code is maintained as open source. you can read / contribute the code, and you can
-      see that it doesn't save your information.
-      <a href="https://github.com/nolleh/resumii">github</a>
+      Resumii is open source and transparent. Review the code, contribute, and verify that your data
+      remains private.
+      <a href="https://github.com/nolleh/resumii">View on GitHub</a>
     </p>
     <!-- <img src="images/icon-calculator.svg" alt="icon Calculator" class="card__icon" /> -->
   </div>

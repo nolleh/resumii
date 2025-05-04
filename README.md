@@ -2,32 +2,32 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Generate Your Resume For Free
-Put your information to be shown in resume step by step, get generated resume.
+## Create Your Professional Resume For Free
 
-We don't save your information in server, but you can load/save your local saved resume information from a file already written by RESUMII.
+Resumii helps you create a professional resume through an easy step-by-step process. Your information stays private and is never saved on our servers. However, you can export your resume data to your local device and load it back later to continue editing.
 
 > [!Note]
-> Try Here  
+> Try it now!  
 > [https://resumiii.vercel.app]()
 
-## For Free
+## Features
 
-Resumii is provided for free.
+### Completely Free
 
-## No Signup
+Create, edit, and download your resume at no cost.
 
-No need to signup, login. We don't save your information.
+### No Signup Required
 
-## Blazing Easy
+Start creating your resume instantly. Your information stays private and is never saved on our servers.
 
-Follow just few steps to make it.
+### Simple & Fast
 
-## Reliable
+Follow our step-by-step guide to create your resume in minutes.
 
-Resumii code is maintained as open source. You can read / contribute the code,  
-and you can see that it doesn't save your information.
+### Open Source
 
-## example
+Resumii is open source and transparent. Review the code, contribute, and verify that your data remains private.
+
+## Example Resume
 
 ![](./static/johndoe.png)

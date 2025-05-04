@@ -4,8 +4,8 @@
 </script>
 
 <div>
-  <h1>example</h1>
-  <p>You can also put html tag to emphasize text. John Doe's example</p>
+  <h1>Example</h1>
+  <p>You can use HTML tags to format your text. Here's an example using John Doe's information:</p>
 
   <hr class="rounded" />
   {#if title}

@@ -32,15 +32,15 @@
   };
 </script>
 
-<h2>Skill</h2>
-<p>Add your Skills, level range is 0 ~ 5</p>
+<h2>Skills</h2>
+<p>Add your professional skills and rate your proficiency level (0-5)</p>
 
 <div id="container">
   <form id="basic">
     <fieldset>
-      <label> title <input bind:value={title} /> </label>
-      <label> level <input bind:value={level} /> </label>
-      <button id="add" on:click={add}>add</button>
+      <label>Skill Name: <input bind:value={title} /></label>
+      <label>Proficiency Level (0-5): <input bind:value={level} /></label>
+      <button id="add" on:click={add}>Add Skill</button>
     </fieldset>
   </form>
   <div id="list">
@@ -50,7 +50,7 @@
           <div class="item">
             {skill.title}
             <div class="details">
-              {skill.level}
+              Level: {skill.level}
             </div>
             <button
               class="remove-button"
@@ -70,7 +70,7 @@
   on:click={() => {
     skill.set(defaultSkills);
     goto('/start/work');
-  }}>default</button
+  }}>Reset to Default</button
 >
 
 <style lang="scss">

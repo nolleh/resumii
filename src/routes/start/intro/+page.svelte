@@ -28,18 +28,18 @@
   }
 </script>
 
-<h2>Intro</h2>
-<p>Put your basic information</p>
+<h2>Introduction</h2>
+<p>Enter your basic information to begin</p>
 
 <form id="basic" action="/start/summary">
   <fieldset>
-    <label>name: <input bind:value={name} /></label>
-    <label>professional title: <input bind:value={comment} /></label>
-    <label>email: <input type="email" bind:value={email} /></label>
-    <label>city: <input bind:value={city} /></label>
+    <label>Name: <input bind:value={name} /></label>
+    <label>Professional Title: <input bind:value={comment} /></label>
+    <label>Email: <input type="email" bind:value={email} /></label>
+    <label>City: <input bind:value={city} /></label>
     <div>
       <Cta label="Next" click={saveContent} />
-      <button class="default-btn" on:click={() => user.set(defaultUser)}>default</button>
+      <button class="default-btn" on:click={() => user.set(defaultUser)}>Reset to Default</button>
     </div>
   </fieldset>
 </form>

@@ -32,15 +32,15 @@
   };
 </script>
 
-<h2>Language</h2>
-<p>Add your language, level range is 0~5</p>
+<h2>Languages</h2>
+<p>Add your language proficiencies and rate your level (0-5)</p>
 
 <div id="container">
   <form id="basic">
     <fieldset>
-      <label> title <input bind:value={title} /> </label>
-      <label> level <input bind:value={level} /> </label>
-      <button id="add" on:click={add}>add</button>
+      <label>Language: <input bind:value={title} /></label>
+      <label>Proficiency Level (0-5): <input bind:value={level} /></label>
+      <button id="add" on:click={add}>Add Language</button>
     </fieldset>
   </form>
   <div id="list">
@@ -50,7 +50,7 @@
           <div class="item">
             {lang.title}
             <div class="details">
-              {lang.level}
+              Level: {lang.level}
             </div>
             <button
               class="remove-button"
@@ -70,7 +70,7 @@
   on:click={() => {
     language.set(defaultLangs);
     goto('/start/edu');
-  }}>default</button
+  }}>Reset to Default</button
 >
 
 <style lang="scss">

@@ -39,13 +39,15 @@
 </script>
 
 <h2>{stepTitle}</h2>
-<p>Put your {stepTitle.toLowerCase()}. Press add button as you needed, then press next</p>
+<p>
+  Add your {stepTitle.toLowerCase()}. Click 'Add' for each entry, then click 'Next' when finished.
+</p>
 <div id="container">
   <form id="basic">
     <fieldset>
-      <label> title <input bind:value={title} /> </label>
-      <label> content <input bind:value={content} /> </label>
-      <button id="add" on:click={add}>add</button>
+      <label>Title: <input bind:value={title} /></label>
+      <label>Description: <input bind:value={content} /></label>
+      <button id="add" on:click={add}>Add Entry</button>
     </fieldset>
   </form>
   <div id="list">
@@ -75,7 +77,7 @@
   on:click={() => {
     store.set(defaultStore);
     goto(next);
-  }}>default</button
+  }}>Reset to Default</button
 >
 
 <style lang="scss">

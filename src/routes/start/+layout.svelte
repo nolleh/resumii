@@ -19,14 +19,19 @@
   <Progress />
 
   <p>
-    Press progress button to proceed that step. <br />
-    You can press anytime the 'Result' button to see your intermediate Resume. If press 'Next' button
-    each step, the written step data applied to 'Result' <br />
-    Press 'Default' button in each step to set example data for that step. (If you want to erase that
-    step's data)
+    Follow these steps to create your resume:
+    <br />
+    • Click the progress buttons to move through each step
+    <br />
+    • You can preview your resume at any time by clicking the 'Result' button
+    <br />
+    • Each step's data is automatically saved when you click 'Next'
+    <br />
+    • Use the 'Default' button to reset any step to example data
   </p>
   <label>
-    You can load from file that saved before, in any step. <br />
+    Load your previously saved resume at any step:
+    <br />
     <input type="file" accept=".json" placeholder="saved.json" onchange={load} />
   </label>
   {@render children()}
